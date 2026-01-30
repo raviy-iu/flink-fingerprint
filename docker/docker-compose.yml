@@ -81,6 +81,26 @@ services:
     networks:
       - flink-network
 
+  flink-job:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flink-job-submitter
+    depends_on:
+      - jobmanager
+      - taskmanager
+      - kafka
+    command: python /opt/flink/submit_job.py
+    environment:
+      - PYTHONPATH=/opt/flink/jobs
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ../src:/opt/flink/jobs/src
+      - ../output:/opt/flink/output
+    networks:
+      - flink-network
+    restart: "no"
+
 volumes:
   flink-checkpoints:
 
