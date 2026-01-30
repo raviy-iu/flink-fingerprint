@@ -1,0 +1,37 @@
+{
+    "fingerprint_001": {
+        "tag_001": {
+            "equipment_id": "eq_01",
+            "eq_type": "kiln",
+            "start_ms": 1622548800000,
+            "end_ms": 1622552400000,
+            "min": 0,
+            "max": 100,
+            "median": 50,
+            "mean": 50,
+            "std_dev": 15
+        },
+        "tag_002": {
+            "equipment_id": "eq_02",
+            "eq_type": "crusher",
+            "start_ms": 1622548800000,
+            "end_ms": 1622552400000,
+            "min": 10,
+            "max": 90,
+            "median": 55,
+            "mean": 54,
+            "std_dev": 12
+        },
+        "tag_003": {
+            "equipment_id": "eq_03",
+            "eq_type": "conveyor",
+            "start_ms": 1622548800000,
+            "end_ms": 1622552400000,
+            "min": 5,
+            "max": 75,
+            "median": 40,
+            "mean": 42,
+            "std_dev": 10
+        }
+    }
+}
