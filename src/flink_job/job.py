@@ -1,29 +1,43 @@
 import os
 import sys
 
-# Add the src directory to Python path for package imports
-# In Docker: /opt/flink/jobs/src, locally: <project>/src
-src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if src_dir not in sys.path:
-    sys.path.insert(0, src_dir)
+# Add directories to Python path for direct imports (no __init__.py needed)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+utils_dir = os.path.join(src_dir, "utils")
+
+for path in [current_dir, src_dir, utils_dir]:
+    if path not in sys.path:
+        sys.path.insert(0, path)
 
 from pyflink.datastream import StreamExecutionEnvironment
 from pyflink.common.time import Time
 from pyflink.common.typeinfo import Types
 from pyflink.datastream.window import TumblingEventTimeWindows
 
-from flink_job.kafka_config import kafka_source, kafka_sink, watermark_strategy
-from flink_job.serialization import parse_sensor_event, build_fingerprint_json
-from flink_job.aggregations import compute_stats
+from kafka_config import kafka_source, kafka_sink, watermark_strategy
+from serialization import parse_sensor_event, build_fingerprint_json
+from aggregations import compute_stats
+from config import KafkaConfig, FlinkConfig
 
 
 def main():
+    print("=" * 60)
+    print("Flink Fingerprint Generator Job")
+    print("=" * 60)
+    print(f"Kafka Bootstrap: {KafkaConfig.bootstrap_servers()}")
+    print(f"Input Topic:     {KafkaConfig.INPUT_TOPIC}")
+    print(f"Output Topic:    {KafkaConfig.OUTPUT_TOPIC}")
+    print(f"Consumer Group:  {KafkaConfig.GROUP_ID}")
+    print(f"Window Size:     {FlinkConfig.WINDOW_SIZE_MINUTES} minute(s)")
+    print(f"Watermark:       {FlinkConfig.WATERMARK_SECONDS} seconds")
+    print("=" * 60)
+
+    print("[1/6] Creating execution environment...")
     env = StreamExecutionEnvironment.get_execution_environment()
     env.set_parallelism(1)
 
-    # -------------------------
-    # Source
-    # -------------------------
+    print("[2/6] Configuring Kafka source...")
     source = kafka_source()
 
     stream = env.from_source(
@@ -32,18 +46,13 @@ def main():
         "sensor-source"
     )
 
-    # -------------------------
-    # Parse JSON
-    # -------------------------
+    print("[3/6] Setting up JSON parser...")
     parsed = stream.map(
         parse_sensor_event,
         output_type=Types.PICKLED_BYTE_ARRAY()
     )
 
-    # -------------------------
-    # Flatten: one record per sensor
-    # (equip_id, sensor_id, value, timestamp)
-    # -------------------------
+    print("[4/6] Configuring data flattening...")
     flattened = parsed.flat_map(
         lambda e: [
             (e.equip_id, sid, float(val), e.timestamp)
@@ -58,23 +67,23 @@ def main():
         ])
     )
 
-    # -------------------------
-    # Window aggregation
-    # -------------------------
+    print("[5/6] Setting up windowed aggregation...")
     windowed = flattened \
         .key_by(lambda x: x[0]) \
         .window(TumblingEventTimeWindows.of(Time.minutes(1))) \
         .process(FingerprintWindowFunction(),
                  output_type=Types.STRING())
 
-    # -------------------------
-    # Sink
-    # -------------------------
+    print("[6/6] Configuring Kafka sink...")
     windowed.sink_to(
         kafka_sink()
     )
 
+    print("-" * 60)
+    print("Submitting job to Flink cluster...")
+    print("-" * 60)
     env.execute("Fingerprint Generator")
+    print("Job completed.")
 
 
 # -------------------------
@@ -110,4 +119,10 @@ class FingerprintWindowFunction(ProcessWindowFunction):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nJob cancelled by user.")
+    except Exception as e:
+        print(f"\n[ERROR] Job failed: {e}")
+        raise

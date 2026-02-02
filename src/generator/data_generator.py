@@ -5,13 +5,16 @@ import sys
 import time
 from datetime import datetime, timezone
 
-# Add the src directory to Python path for package imports
-src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if src_dir not in sys.path:
-    sys.path.insert(0, src_dir)
+# Add utils directory to Python path for direct imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+utils_dir = os.path.join(src_dir, "utils")
+
+if utils_dir not in sys.path:
+    sys.path.insert(0, utils_dir)
 
 from kafka import KafkaProducer
-from utils.config import EquipmentConfig, KafkaConfig
+from config import EquipmentConfig, KafkaConfig
 
 
 def generate_value():

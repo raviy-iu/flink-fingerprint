@@ -1,3 +1,14 @@
+import os
+import sys
+
+# Add utils directory to Python path for direct imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+utils_dir = os.path.join(src_dir, "utils")
+
+if utils_dir not in sys.path:
+    sys.path.insert(0, utils_dir)
+
 from pyflink.datastream.connectors.kafka import (
     KafkaSource,
     KafkaSink,
@@ -7,7 +18,7 @@ from pyflink.datastream.connectors.kafka import (
 from pyflink.common.serialization import SimpleStringSchema
 from pyflink.common import WatermarkStrategy, Duration
 
-from utils.config import KafkaConfig, FlinkConfig
+from config import KafkaConfig, FlinkConfig
 
 
 def kafka_source():

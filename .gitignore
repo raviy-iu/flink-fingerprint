@@ -25,8 +25,7 @@ build/
 *.jar
 
 # Output files
-output/*.csv
-output/*.json
+output/*
 !output/.gitkeep
 
 # Logs

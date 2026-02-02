@@ -1,1 +1,0 @@
-"""Sensor data generator module."""

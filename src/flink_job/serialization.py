@@ -1,6 +1,14 @@
 import json
+import os
+import sys
 import uuid
-from flink_job.models import SensorEvent
+
+# Add current directory to Python path for direct imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+from models import SensorEvent
 
 
 def parse_sensor_event(raw: str) -> SensorEvent:

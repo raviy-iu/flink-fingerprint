@@ -2,17 +2,20 @@ import json
 import os
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 from kafka import KafkaConsumer
 from threading import Thread
 from queue import Queue
 
-# Add the src directory to Python path for package imports
-src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if src_dir not in sys.path:
-    sys.path.insert(0, src_dir)
+# Add utils directory to Python path for direct imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.dirname(current_dir)
+utils_dir = os.path.join(src_dir, "utils")
 
-from utils.config import KafkaConfig
+if utils_dir not in sys.path:
+    sys.path.insert(0, utils_dir)
+
+from config import KafkaConfig
 
 
 class FingerprintSaver:
@@ -123,8 +126,8 @@ class FingerprintSaver:
                 "window": {
                     "start_ms": start_ms,
                     "end_ms": end_ms,
-                    "start_time": datetime.utcfromtimestamp(start_ms / 1000).isoformat(),
-                    "end_time": datetime.utcfromtimestamp(end_ms / 1000).isoformat(),
+                    "start_time": datetime.fromtimestamp(start_ms / 1000, tz=timezone.utc).isoformat(),
+                    "end_time": datetime.fromtimestamp(end_ms / 1000, tz=timezone.utc).isoformat(),
                 },
                 "readings": matching_sensor_data,
                 "reading_count": len(matching_sensor_data),

@@ -6,7 +6,7 @@ A real-time sensor data processing pipeline using Apache Flink and Kafka.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                              DOCKER ENVIRONMENT                                  │
+│                              DOCKER ENVIRONMENT                                 │
 │  ┌─────────────┐    ┌─────────────────────────────────────────────────────────┐ │
 │  │  Zookeeper  │    │                      KAFKA                              │ │
 │  │   :2182     │◄───┤  ┌─────────────────┐      ┌──────────────────────┐      │ │
@@ -20,10 +20,10 @@ A real-time sensor data processing pipeline using Apache Flink and Kafka.
 │                                 │                          │                    │
 │  ┌──────────────────────────────┼──────────────────────────┼──────────────────┐ │
 │  │                         FLINK CLUSTER                   │                  │ │
-│  │  ┌─────────────┐    ┌───────┴───────┐    ┌─────────────┴─────────────┐    │ │
-│  │  │ JobManager  │    │ Kafka Source  │    │       Kafka Sink          │    │ │
-│  │  │   :8081     │    │               │    │                           │    │ │
-│  │  └─────────────┘    └───────┬───────┘    └───────────────▲───────────┘    │ │
+│  │  ┌─────────────┐    ┌───────┴───────┐    ┌─────────────┴─────────────┐     │ │
+│  │  │ JobManager  │    │ Kafka Source  │    │       Kafka Sink          │     │ │
+│  │  │   :8081     │    │               │    │                           │     │ │
+│  │  └─────────────┘    └───────┬───────┘    └───────────────▲───────────┘     │ │
 │  │                             │                            │                 │ │
 │  │  ┌─────────────┐            ▼                            │                 │ │
 │  │  │ TaskManager │    ┌───────────────────────────────────┐│                 │ │
@@ -161,6 +161,19 @@ Topic: sensor-data
 ### Step 4: Start Flink Job
 
 **Terminal 3** - Run the Flink fingerprint processing job:
+
+# Run in detached mode (returns immediately)
+
+```bash
+docker exec -it flink-fingerprint-main-jobmanager flink run -d -py /opt/flink/jobs/src/flink_job/job.py
+```
+
+# With parallelism
+```bash
+docker exec -it flink-fingerprint-main-jobmanager flink run -d -p 2 -py /opt/flink/jobs/src/flink_job/job.py
+```
+
+# In local python
 ```bash
 docker exec -it flink-fingerprint-main-jobmanager python /opt/flink/jobs/src/flink_job/job.py
 ```

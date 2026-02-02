@@ -1,1 +1,0 @@
-"""PyFlink Streaming Fingerprint System."""
