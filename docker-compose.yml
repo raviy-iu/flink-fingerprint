@@ -31,13 +31,13 @@ services:
     ports:
       - "18081:8081"
     environment:
+      - RUN_ENV=docker
       - |
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
         execution.checkpointing.interval: 60000
     volumes:
       - ./src:/opt/flink/jobs/src
-      - ./main.py:/opt/flink/jobs/main.py
       - ./output:/opt/flink/output
     depends_on:
       - kafka
@@ -49,11 +49,11 @@ services:
     depends_on:
       - jobmanager
     environment:
+      - RUN_ENV=docker
       - |
         FLINK_PROPERTIES=
         jobmanager.rpc.address: jobmanager
         taskmanager.numberOfTaskSlots: 4
     volumes:
       - ./src:/opt/flink/jobs/src
-      - ./main.py:/opt/flink/jobs/main.py
       - ./output:/opt/flink/output
