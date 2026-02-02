@@ -1,0 +1,31 @@
+{
+    "fingerprint_001": {
+        "equip_id": 110,
+        "type": "kiln",
+        "start_ms": 1622548800000,
+        "end_ms": 1622552400000,
+        "data": {
+            "001": {
+                "min": 0,
+                "max": 100,
+                "median": 50,
+                "mean": 50,
+                "std_dev": 15
+            },
+            "002": {
+                "min": 10,
+                "max": 90,
+                "median": 55,
+                "mean": 54,
+                "std_dev": 12
+            },
+            "003": {
+                "min": 20,
+                "max": 75,
+                "median": 40,
+                "mean": 42,
+                "std_dev": 10
+            }
+        }
+    }
+}
