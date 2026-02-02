@@ -209,6 +209,61 @@ docker exec -it flink-fingerprint-main-jobmanager python /opt/flink/jobs/src/pos
 
 Output files are saved to `./output/` folder with format: `{fingerprint_id}_{start_ms}_{end_ms}.json`
 
+#### How save_fingerprints.py Works
+
+This is a **Kafka consumer script** (not a Flink job). It reads already-processed fingerprints from Kafka and saves them to files.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    save_fingerprints.py                         │
+│                                                                 │
+│  ┌──────────────────┐         ┌──────────────────┐              │
+│  │  Thread 1        │         │  Main Thread     │              │
+│  │  (sensor-data)   │         │  (fingerprint)   │              │
+│  │                  │         │                  │              │
+│  │  Kafka Consumer  │         │  Kafka Consumer  │              │
+│  │       │          │         │       │          │              │
+│  │       ▼          │         │       ▼          │              │
+│  │  Buffer in       │         │  On each msg:    │              │
+│  │  memory by       │────────►│  - Find matching │              │
+│  │  equip_id        │         │    sensor data   │              │
+│  │                  │         │  - Combine both  │              │
+│  └──────────────────┘         │  - Save to file  │              │
+│                               └──────────────────┘              │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+| Step | Action |
+|------|--------|
+| 1 | Consumes `sensor-data` topic → buffers in memory |
+| 2 | Consumes `fingerprint-output` topic (already processed by Flink) |
+| 3 | Correlates fingerprint with matching sensor readings (by time window) |
+| 4 | Saves combined JSON to `./output/` folder |
+
+#### Output File Structure
+```json
+{
+  "fingerprint": {
+    "uuid": "...",
+    "equip_id": "110",
+    "start_ms": 1706123400000,
+    "end_ms": 1706123460000,
+    "data": { /* aggregated stats */ }
+  },
+  "sensor_data": {
+    "equip_id": 110,
+    "window": {
+      "start_ms": 1706123400000,
+      "end_ms": 1706123460000,
+      "start_time": "2024-01-24T10:30:00+00:00",
+      "end_time": "2024-01-24T10:31:00+00:00"
+    },
+    "readings": [ /* original sensor readings within window */ ],
+    "reading_count": 60
+  }
+}
+```
+
 ---
 
 ## Monitoring Commands
