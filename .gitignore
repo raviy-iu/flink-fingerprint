@@ -51,3 +51,4 @@ docker/data/
 
 # Checkpoints
 checkpoints/
+scripts/
