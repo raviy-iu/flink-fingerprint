@@ -8,7 +8,7 @@ from pyflink.table import (
 )
 from pyflink.table.udf import udf
 
-from src.utils.config import FlinkConfig, KafkaConfig
+from utils.config import FlinkConfig, KafkaConfig
 
 
 def run_fingerprint_job():

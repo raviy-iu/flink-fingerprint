@@ -1,23 +1,9 @@
+import os
+
+
 class EquipmentConfig:
     EQUIPMENT_IDS = [110, 111, 112, 113, 114]
-    SENSOR_IDS = [
-        "0001",
-        "0002",
-        "0003",
-        "0004",
-        "0005",
-        "0006",
-        "0007",
-        "0150",
-    ]
-
-
-class FlinkConfig:
-    WINDOW_SIZE_MINUTES = 1
-    WATERMARK_SECONDS = 10
-    ALLOWED_LATENESS_MINUTES = 1
-    CHECKPOINT_INTERVAL_MS = 60000
-    PARALLELISM = 2
+    SENSOR_IDS = ["0001", "0002", "0003", "0004", "0005"]
 
 
 class KafkaConfig:
@@ -28,3 +14,17 @@ class KafkaConfig:
     OUTPUT_TOPIC = "fingerprint-output"
 
     GROUP_ID = "fingerprint-consumer"
+
+    @staticmethod
+    def bootstrap_servers():
+        return (
+            KafkaConfig.BOOTSTRAP_SERVERS_DOCKER
+            if os.getenv("RUN_ENV") == "docker"
+            else KafkaConfig.BOOTSTRAP_SERVERS_HOST
+        )
+
+
+class FlinkConfig:
+    WINDOW_SIZE_MINUTES = 1
+    WATERMARK_SECONDS = 10
+    PARALLELISM = 2

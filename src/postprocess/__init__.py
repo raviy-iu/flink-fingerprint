@@ -1,8 +1,3 @@
-"""Post-processing module for converting Flink output to nested format."""
+from postprocess.save_fingerprints import save_fingerprints, FingerprintSaver
 
-from src.postprocess.convert_fingerprints import (
-    process_flink_output,
-    run_postprocess,
-)
-
-__all__ = ["process_flink_output", "run_postprocess"]
+__all__ = ["save_fingerprints", "FingerprintSaver"]
