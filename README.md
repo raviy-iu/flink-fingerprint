@@ -10,7 +10,7 @@ A real-time sensor data processing pipeline using Apache Flink and Kafka.
 │  ┌─────────────┐    ┌─────────────────────────────────────────────────────────┐ │
 │  │  Zookeeper  │    │                      KAFKA                              │ │
 │  │   :2182     │◄───┤  ┌─────────────────┐      ┌──────────────────────┐      │ │
-│  └─────────────┘    │  │  sensor-data    │      │  fingerprint-output  │      │ │
+│  └─────────────┘    │  │  synthetic-sensor-data    │      │  fingerprint-output  │      │ │
 │                     │  │  (input topic)  │      │   (output topic)     │      │ │
 │                     │  └────────▲────────┘      └──────────▲───────────┘      │ │
 │                     │           │                          │                  │ │
@@ -45,7 +45,7 @@ A real-time sensor data processing pipeline using Apache Flink and Kafka.
 ```
 ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
 │    Data      │     │    Kafka     │     │    Flink     │     │    Kafka     │
-│  Generator   │────►│ sensor-data  │────►│  Processing  │────►│ fingerprint- │
+│  Generator   │────►│ synthetic-sensor-data  │────►│  Processing  │────►│ fingerprint- │
 │  (Python)    │     │   (topic)    │     │    (1 min    │     │   output     │
 │              │     │              │     │   windows)   │     │   (topic)    │
 └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
@@ -59,7 +59,7 @@ A real-time sensor data processing pipeline using Apache Flink and Kafka.
 
 ## Input/Output Schema
 
-### Input Message (sensor-data topic)
+### Input Message (synthetic-sensor-data topic)
 ```json
 {
   "equip_id": 110,
@@ -123,7 +123,7 @@ Expected output: All 4 services (zookeeper, kafka, jobmanager, taskmanager) shou
 
 **Terminal 1** - Create required topics:
 ```bash
-docker exec flink-fingerprint-main-kafka kafka-topics --bootstrap-server localhost:9093 --create --topic sensor-data --partitions 1 --replication-factor 1
+docker exec flink-fingerprint-main-kafka kafka-topics --bootstrap-server localhost:9093 --create --topic synthetic-sensor-data --partitions 1 --replication-factor 1
 ```
 
 ```bash
@@ -150,7 +150,7 @@ You should see output like:
 Sensor Data Generator
 ============================================================
 Bootstrap servers: kafka:9093
-Topic: sensor-data
+Topic: synthetic-sensor-data
 ...
 [2024-01-15 10:30:01] Batch #1: Sent 5 messages (equip_ids: 110-114)
 [2024-01-15 10:30:02] Batch #2: Sent 5 messages (equip_ids: 110-114)
@@ -178,15 +178,28 @@ docker exec -it flink-fingerprint-main-jobmanager flink run -d -p 2 -py /opt/fli
 docker exec -it flink-fingerprint-main-jobmanager python /opt/flink/jobs/src/flink_job/job.py
 ```
 
-Wait for job submission confirmation.
+Wait for job submission confirmation and verify:
 
----
+# List running jobs
+```bash
+docker exec flink-fingerprint-main-jobmanager flink list -r
+```
+
+# Or check Web UI
+```bash
+http://localhost:18081
+```
+
+# To cancel a cluster job:
+```bash
+docker exec flink-fingerprint-main-jobmanager flink cancel <job-id>
+```
 
 ### Step 5: Monitor Input Topic (Optional)
 
 **Terminal 4** - View sensor data being produced:
 ```bash
-docker exec flink-fingerprint-main-kafka kafka-console-consumer --bootstrap-server localhost:9093 --topic sensor-data --from-beginning
+docker exec flink-fingerprint-main-kafka kafka-console-consumer --bootstrap-server localhost:9093 --topic synthetic-sensor-data --from-beginning
 ```
 
 ---
@@ -219,7 +232,7 @@ This is a **Kafka consumer script** (not a Flink job). It reads already-processe
 │                                                                 │
 │  ┌──────────────────┐         ┌──────────────────┐              │
 │  │  Thread 1        │         │  Main Thread     │              │
-│  │  (sensor-data)   │         │  (fingerprint)   │              │
+│  │  (synthetic-sensor-data)   │         │  (fingerprint)   │              │
 │  │                  │         │                  │              │
 │  │  Kafka Consumer  │         │  Kafka Consumer  │              │
 │  │       │          │         │       │          │              │
@@ -235,7 +248,7 @@ This is a **Kafka consumer script** (not a Flink job). It reads already-processe
 
 | Step | Action |
 |------|--------|
-| 1 | Consumes `sensor-data` topic → buffers in memory |
+| 1 | Consumes `synthetic-sensor-data` topic → buffers in memory |
 | 2 | Consumes `fingerprint-output` topic (already processed by Flink) |
 | 3 | Correlates fingerprint with matching sensor readings (by time window) |
 | 4 | Saves combined JSON to `./output/` folder |
@@ -283,7 +296,7 @@ Open in browser: **http://localhost:18081**
 
 ### Check Kafka Topic Stats
 ```bash
-docker exec flink-fingerprint-main-kafka kafka-topics --bootstrap-server localhost:9093 --describe --topic sensor-data
+docker exec flink-fingerprint-main-kafka kafka-topics --bootstrap-server localhost:9093 --describe --topic synthetic-sensor-data
 ```
 
 ```bash
@@ -376,3 +389,20 @@ docker-compose ps
 ```bash
 docker-compose restart
 ```
+
+### Flow
+Flink generates the fingerprints, specifically in the TaskManager container.
+
+Here's the flow:
+
+Data Generator → publishes raw sensor readings to Kafka topic synthetic-sensor-data
+
+Flink Job (job.py) consumes and processes the data:
+
+Parses sensor events
+Groups by equip_id using 1-minute tumbling windows
+Computes statistics (min, max, mean, median, std_dev) via FingerprintWindowFunction
+Outputs fingerprint JSON to Kafka topic fingerprint-output
+Postprocessor (save_fingerprints.py) optionally consumes fingerprints and saves them to files
+
+The core fingerprint computation happens in aggregations.py with the compute_stats() function, and the JSON structure is built in serialization.py.
