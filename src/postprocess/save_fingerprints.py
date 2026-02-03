@@ -20,7 +20,7 @@ from config import KafkaConfig
 
 class FingerprintSaver:
     """
-    Consumes sensor-data and fingerprint-output from Kafka,
+    Consumes synthetic-sensor-data and fingerprint-output from Kafka,
     correlates them, and saves combined JSON files.
     """
 
@@ -44,7 +44,7 @@ class FingerprintSaver:
         )
 
     def _create_sensor_consumer(self) -> KafkaConsumer:
-        """Create Kafka consumer for sensor-data topic"""
+        """Create Kafka consumer for synthetic-sensor-data topic"""
         return KafkaConsumer(
             KafkaConfig.INPUT_TOPIC,
             bootstrap_servers=KafkaConfig.bootstrap_servers(),

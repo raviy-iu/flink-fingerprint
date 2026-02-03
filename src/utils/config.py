@@ -10,7 +10,7 @@ class KafkaConfig:
     BOOTSTRAP_SERVERS_HOST = "localhost:29093"
     BOOTSTRAP_SERVERS_DOCKER = "kafka:9093"
 
-    INPUT_TOPIC = "sensor-data"
+    INPUT_TOPIC = "synthetic-sensor-data"
     OUTPUT_TOPIC = "fingerprint-output"
 
     GROUP_ID = "fingerprint-consumer"

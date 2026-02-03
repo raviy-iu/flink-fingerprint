@@ -37,6 +37,13 @@ def main():
     env = StreamExecutionEnvironment.get_execution_environment()
     env.set_parallelism(1)
 
+    # Register Python files for cluster mode (TaskManager workers need these)
+    env.add_python_file(os.path.join(current_dir, "serialization.py"))
+    env.add_python_file(os.path.join(current_dir, "aggregations.py"))
+    env.add_python_file(os.path.join(current_dir, "kafka_config.py"))
+    env.add_python_file(os.path.join(current_dir, "models.py"))
+    env.add_python_file(os.path.join(utils_dir, "config.py"))
+
     print("[2/6] Configuring Kafka source...")
     source = kafka_source()
 

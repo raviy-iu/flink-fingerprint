@@ -7,8 +7,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-RUN pip3 install --no-cache-dir \
+# Install Python dependencies (with extended timeout for large packages)
+RUN pip3 install --no-cache-dir --timeout=300 --retries=3 \
     apache-flink==1.18.0 \
     kafka-python \
     pandas \
