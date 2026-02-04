@@ -1,0 +1,10 @@
+{
+  "last_run_by_equip": {
+    "113": "2026-02-03T12:29:36.323079+00:00",
+    "SCL_LINE_2_KILN": "2026-02-03T15:46:36.444121+00:00"
+  },
+  "last_output_by_equip": {
+    "113": "outputs\\kiln_mapping_llm_output_20260203_175936_289389.json",
+    "SCL_LINE_2_KILN": "outputs\\kiln_mapping_llm_output_20260203_211636_429804.json"
+  }
+}

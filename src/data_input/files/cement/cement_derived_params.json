@@ -1,0 +1,362 @@
+﻿{
+   "derived_parameters": [
+      {
+         "name": "KILN_FEED_RATE",
+         "description": "Total feed supplied to the kiln",
+         "formula": "(KILN_FEED_SFF_TPH + KILN_FEED_ROTO_SCALE_TPH)",
+         "unit": "TPH",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_1_2_DP_DROP_HIGH",
+         "description": "Pressure drop across String 1 Cyclone 1&2",
+         "formula": "(STAGE_I_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)-(STAGE_2LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_2_3_DP_DROP_HIGH",
+         "description": "Pressure drop across String 1 Cyclone 2&3",
+         "formula": "(STAGE_2LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)-(STAGE_3LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_3_4_DP_DROP_HIGH",
+         "description": "Pressure drop across String 1 Cyclone 3&4",
+         "formula": "(STAGE_3LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)-(STAGE_4LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_4_5_DP_DROP_HIGH",
+         "description": "Pressure drop across String 1 Cyclone 4&5",
+         "formula": "(STAGE_4LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)-(STAGE_5LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_5_6_DP_DROP_HIGH",
+         "description": "Pressure drop across String 1 Cyclone 5&6",
+         "formula": "(STAGE_5LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)-(STAGE_6_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_1_2_DP_DROP_HIGH",
+         "description": "Pressure drop across String 2 Cyclone 1&2",
+         "formula": "(STAGE_1_RIGHT_CYCLONE_DRAFT_PRESSURE)-(STAGE_2_RIGHT_CYCLONE_DRAFT_PRESSURE)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_2_3_DP_DROP_HIGH",
+         "description": "Pressure drop across String 2 Cyclone 2&3",
+         "formula": "(STAGE_2_RIGHT_CYCLONE_DRAFT_PRESSURE)-(STAGE_3_RIGHT_CYCLONE_DRAFT_PRESSURE)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_3_4_DP_DROP_HIGH",
+         "description": "Pressure drop across String 2 Cyclone 3&4",
+         "formula": "(STAGE_3_RIGHT_CYCLONE_DRAFT_PRESSURE)-(STAGE_4_RIGHT_CYCLONE_DRAFT_PRESSURE)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_4_5_DP_DROP_HIGH",
+         "description": "Pressure drop across String 2 Cyclone 4&5",
+         "formula": "(STAGE_4_RIGHT_CYCLONE_DRAFT_PRESSURE)-(STAGE_5_RIGHT_CYCLONE_DRAFT_PRESSURE)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_5_6_DP_DROP_HIGH",
+         "description": "Pressure drop across String 2 Cyclone 5&6",
+         "formula": "(STAGE_5_RIGHT_CYCLONE_DRAFT_PRESSURE)-(STAGE_6_RIGHT_CYCLONE_DRAFT_PRESSURE_8)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_1_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 1 due to temp difference",
+         "formula": "(STAGE_I_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_I_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 2 due to temp difference",
+         "formula": "(STAGE_2_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_2_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 3 due to temp difference",
+         "formula": "(STAGE_3_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_3_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 4 due to temp difference",
+         "formula": "(STAGE_4_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_4_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 5 due to temp difference",
+         "formula": "(STAGE_5_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_5_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_2_CYCLONE_6_OUTLET_GAS_DT",
+         "description": "OUTLET_GAS_DT across String 1&2 Cyclone 6 due to temp difference",
+         "formula": "(STAGE_6_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_1_2_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 1 Cyclone 1&2",
+         "formula": "(STAGE_I_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)-(STAGE_2_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_1_2_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 1 Cyclone 1&2",
+         "formula": "(STAGE_I_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_2_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_2_3_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 1 Cyclone 2&3",
+         "formula": "(STAGE_2_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)-(STAGE_3_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_2_3_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 1 Cyclone 2&3",
+         "formula": "(STAGE_2_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_3_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_3_4_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 1 Cyclone 3&4",
+         "formula": "(STAGE_3_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)-(STAGE_4_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_3_4_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 1 Cyclone 3&4",
+         "formula": "(STAGE_3_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_4_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_4_5_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 1 Cyclone 4&5",
+         "formula": "(STAGE_4_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)-(STAGE_5_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_4_5_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 1 Cyclone 4&5",
+         "formula": "(STAGE_4_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_5_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_5_6_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 1 Cyclone 5&6",
+         "formula": "(STAGE_5_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)-(STAGE_6_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_CYCLONE_5_6_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 1 Cyclone 5&6",
+         "formula": "(STAGE_5_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_6_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_1_2_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 2 Cyclone 1&2",
+         "formula": "(STAGE_1_RIGHT_CYCLONE_MATERIAL_TEMP)-(STAGE_2_RIGHT_CYCLONE_MATERIAL_TEMP)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_1_2_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 2 Cyclone 1&2",
+         "formula": "(STAGE_I_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_2_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_2_3_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 2 Cyclone 2&3",
+         "formula": "(STAGE_2_RIGHT_CYCLONE_MATERIAL_TEMP)-(STAGE_3_RIGHT_CYCLONE_MATERIAL_TEMP)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_2_3_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 2 Cyclone 2&3",
+         "formula": "(STAGE_2_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_3_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_3_4_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 2 Cyclone 3&4",
+         "formula": "(STAGE_3_RIGHT_CYCLONE_MATERIAL_TEMP)-(STAGE_4_RIGHT_CYCLONE_MATERIAL_TEMP)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_3_4_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 2 Cyclone 3&4",
+         "formula": "(STAGE_3_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_4_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_4_5_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 2 Cyclone 4&5",
+         "formula": "(STAGE_4_RIGHT_CYCLONE_MATERIAL_TEMP)-(STAGE_5_RIGHT_CYCLONE_MATERIAL_TEMP)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_4_5_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 2 Cyclone 4&5",
+         "formula": "(STAGE_4_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_5_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_5_6_MATERIAL_DT_LOW",
+         "description": "Material temperature drop across String 2 Cyclone 5&6",
+         "formula": "(STAGE_5_RIGHT_CYCLONE_MATERIAL_TEMP)-(STAGE_6_RIGHT_CYCLONE_MATERIAL_TEMP_8)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_CYCLONE_5_6_GAS_DT_LOW",
+         "description": "Gas temperature drop across String 2 Cyclone 5&6",
+         "formula": "(STAGE_5_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)-(STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "TOTAL_FUEL_IN_PERCENT",
+         "description": "Total fuel supplied to the kiln in percentage",
+         "formula": "((FUEL_FIRING_RATE_IN_KILN + FUEL_FIRING_RATE_IN_CALCINER)*100/(KILN_FEED_ROTO_SCALE_TPH + KILN_FEED_SFF_TPH))/1.56",
+         "unit": "%",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_LEFT_TWIN_CYCLONE_MAT_DT_LOW",
+         "description": "Material temperature drop across String 2 Twin Cyclone",
+         "formula": "(STRING_2_2ND_CYCLONE_MATERIAL_TEMP)-(STRING_2_TWIN_CYCLONE_CONE_MAT_TEMP_LEFT_SIDE_)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_RIGHT_TWIN_CYCLONE_MAT_DT_LOW",
+         "description": "Material temperature drop across String 2 Right Twin Cyclone",
+         "formula": "(STRING_2_2ND_CYCLONE_MATERIAL_TEMP)-(STRING_2_TWIN_CYCLONE_CONE_MATTEMP_RIGHT_SIDE_)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_2_TWIN_CYCLONE_EXAUST_DT_LOW",
+         "description": "Total draft pressure in the kiln system",
+         "formula": "(STRING_2_2ND_CYCLONE_EXAUST_TEMP)-(SRTING_2_TWIN_CYCLONE_EXAUST_TEMPERATURE)",
+         "unit": "mmwc",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {"name": "STRING_1_LEFT_TWIN_CYCLONE_MAT_DT_LOW",
+         "description": "Material temperature drop across String 1 Left Twin Cyclone",
+         "formula": "(STRING_1_2ND_CYCLONE_MATERIAL_TEMP)-(STRING_1_TWIN_CYCLONE_CONE_MAT_TEMP_LEFT_SIDE_)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_RIGHT_TWIN_CYCLONE_MAT_DT_LOW",
+         "description": "Material temperature drop across String 1 Right Twin Cyclone",
+         "formula": "(STRING_1_2ND_CYCLONE_MATERIAL_TEMP)-(STRING_1_TWIN_CYCLONE_CONE_MAT_TEMP_RIGHT_SIDE_)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      },
+      {
+         "name": "STRING_1_TWIN_CYCLONE_EXAUST_DT_LOW",
+         "description": "Exhaust temperature drop across String 1 Left Twin Cyclone",
+         "formula": "(STRING_1_2ND_CYCLONE_EXAUST_TEMP)-(SRTING_1_TWIN_CYCLONE_EXAUST_TEMPERATURE)",
+         "unit": "°C",
+         "enabled": true,
+         "application": "kiln"
+      }
+   ],
+   "_instructions": {
+      "how_to_use": "Define derived parameters for all equipment in the cement industry",
+      "formula_syntax": "Use actual Comparative_tag names directly in formulas with mathematical operators (+, -, *, /, **) and functions (sqrt, abs, log, exp, sin, cos, etc.)",
+      "application": "Specify which equipment application this derived parameter applies to (kiln, coal mill, raw mill, cement mill, crusher, cooler)",
+      "enabled": "Set to true to activate the derived parameter calculation",
+      "safety": "Formulas are evaluated safely using numpy/pandas - no arbitrary code execution"
+   }
+}

@@ -1,0 +1,266 @@
+{
+    "SCL_LINE_1_CEMENT_MILL_1": {
+        "application": "cement mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_COAL_MILL": {
+        "application": "coal mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_RAW_MILL_1": {
+        "application": "raw mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_LIMESTONE": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_COAL_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_HRP": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_CEMENT_MILL_2": {
+        "application": "cement mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_KILN": {
+        "application": "kiln",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_COOLER": {
+        "application": "cooler",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_BAG_HOUSE": {
+        "application": "baghouse",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_MOISTURE": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_CLINKER": {
+        "application": "clinker",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_CLINKER_SIEVE": {
+        "application": "sieve",
+        "industry": "cement"
+    },
+    "SCL_LINE_1_BOILER": {
+        "application": "boiler",
+        "industry": "cement"
+    },
+    "SCML_COAL_MILL": {
+        "application": "coal mill",
+        "industry": "cement"
+    },
+    "SCML_COOLER": {
+        "application": "cooler",
+        "industry": "cement"
+    },
+    "SCML_KILN": {
+        "application": "kiln",
+        "industry": "cement"
+    },
+    "SCML_LS_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCML_ADDITIVE_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCML_RAW_MILL": {
+        "application": "raw mill",
+        "industry": "cement"
+    },
+    "SCML_CLINKER": {
+        "application": "clinker",
+        "industry": "cement"
+    },
+    "SCML_CLINKER_SIEVE": {
+        "application": "sieve",
+        "industry": "cement"
+    },
+    "SCML_LS_SIEVE": {
+        "application": "sieve",
+        "industry": "cement"
+    },
+    "SCML_BOILER": {
+        "application": "boiler",
+        "industry": "cement"
+    },
+    "SCML_MRSS": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCML_RMHS": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCML_RABH": {
+        "application": "baghouse",
+        "industry": "cement"
+    },
+    "SCML_PREHEATER": {
+        "application": "preheater",
+        "industry": "cement"
+    },
+    "SCML_CCR": {
+        "application": "control room",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_COAL_MILL": {
+        "application": "coal mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_COOLER": {
+        "application": "cooler",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_KILN": {
+        "application": "kiln",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_LS_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_RAW_MILL": {
+        "application": "raw mill",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_WHRS_BOILER": {
+        "application": "whrs",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_WHRS_TURBINE": {
+        "application": "whrs",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_WHRS_ACC": {
+        "application": "whrs",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_CLINKER": {
+        "application": "clinker",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_CLINKER_SIEVE": {
+        "application": "sieve",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_DOC": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_RAW_MATERIAL": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_DESPATCH_CLK": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_INCOMING": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_OUTGOING": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_ADDITIVE_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_UTILITY": {
+        "application": "utility",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_ADD_CRUSHER": {
+        "application": "crusher",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_CCR": {
+        "application": "control room",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_PH": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_RMBH": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_RMH": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_CRSR": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_LINE_2_MISS": {
+        "application": "other",
+        "industry": "cement"
+    },
+    "SCL_GGU_CEMENT_MILL": {
+        "application": "cement mill",
+        "industry": "cement"
+    },
+    "SCNEL_GGU_CEMENT_MILL": {
+        "application": "cement mill",
+        "industry": "cement"
+    },
+    "SCNEL_GGU_PACKER_1": {
+        "application": "packing",
+        "industry": "cement"
+    },
+    "SCNEL_GGU_PACKER_2": {
+        "application": "packing",
+        "industry": "cement"
+    },
+    "SCNEL_GGU_PACKER_3": {
+        "application": "packing",
+        "industry": "cement"
+    },
+    "SCL_SGU_CEMENT_MILL": {
+        "application": "cement mill",
+        "industry": "cement"
+    },
+    "SCL_SGU_PACKER_1": {
+        "application": "packing",
+        "industry": "cement"
+    },
+    "SCL_SGU_PACKER_2": {
+        "application": "packing",
+        "industry": "cement"
+    },
+    "WHRS_1_2_TURBINE": {
+        "application": "whrs",
+        "industry": "cement"
+    },
+    "PACKING_PLANT_1": {
+        "application": "packing plant",
+        "industry": "cement"
+    },
+    "PACKING_PLANT_2": {
+        "application": "packing plant",
+        "industry": "cement"
+    },
+    "PACKING_PLANT_3": {
+        "application": "packing plant",
+        "industry": "cement"
+    }
+}

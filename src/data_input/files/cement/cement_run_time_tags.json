@@ -1,0 +1,55 @@
+{
+  "run_time_tags": [
+    {
+      "application": "coal mill",
+      "tag": "COAL_MILL_MAIN_DRIVE_POWER",
+      "threshold": 150,
+      "op": ">"
+    },
+    {
+      "application": "kiln",
+      "equipment": "SCL_LINE_2_KILN",
+      "tag": "KILN_MAIN_DRIVE_SPEED",
+      "threshold": 0.1,
+      "op": ">",
+      "shutdown_window_h": 2,
+      "transition_window_h": 24
+    },
+    {
+      "application": "raw mill",
+      "tag": "RAW_MILL_MAIN_DRIVE_POWER",
+      "threshold": 250,
+      "op": ">"
+    },
+    {
+      "application": "cement mill",
+      "tag": "MILL_MAIN_DRIVE_KW",
+      "threshold": 200,
+      "op": ">"
+    },
+    {
+      "application": "crusher",
+      "tag": "LIMESTONE_APRON_FEEDER_RPM",
+      "threshold": 0,
+      "op": ">"
+    },
+    {
+      "application": "cooler",
+      "equipment": "SCL_LINE_2_COOLER",
+      "tag": "COOLER_SPEED",
+      "threshold": 0,
+      "op": ">",
+      "shutdown_window_h": 2,
+      "transition_window_h": 12
+    }
+  ],
+  "_instructions": {
+    "how_to_use": "Define running condition tags for each equipment type in the cement industry",
+    "application": "Specify which equipment application this run-time tag applies to",
+    "equipment": "Optional: specific equipment name to override application-level settings",
+    "tag": "The parameter name (Comparative_tag) that indicates equipment is running",
+    "threshold": "The minimum value above which equipment is considered to be in running state (equipment is running when tag_value > threshold)",
+    "shutdown_window_h": "Optional: continuous off duration (hours) to mark SHUTDOWN",
+    "transition_window_h": "Optional: suppression window (hours) after restart before alerts resume"
+  }
+}

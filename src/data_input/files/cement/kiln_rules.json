@@ -1,0 +1,3244 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Inlet duct choking / Material build-up / Ring formation in cyclone cone",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_GAS_PRESSURE_1",
+            "op": ">",
+            "value": -250,
+            "duration_s": 60,
+            "units": "mbar"
+          },
+          {
+            "param": "PH_OUTLET_GAS_PRESSURE_2",
+            "op": ">",
+            "value": -250,
+            "duration_s": 60,
+            "units": "mbar"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Material build-up reduces separation and flow stability.",
+    "recommendation": "Stabilize upstream conditions, Trim feed, optimize draft, plan safe inspection and schedule safe cleaning"
+  },
+  {
+    "id": 2,
+    "name": "String 1 material build-up/ Ring formation in cyclone cone/ cyclone jamming",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "STAGE_I_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+            "op": ">",
+            "value": -100,
+            "duration_s": 60,
+            "units": "mmwc"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Inlet duct choking / Material build-up in cyclone cone, possibility of cyclone jamming",
+    "recommendation": "Inspect and clean string 1 material build-up/ cyclone jamming"
+  },
+  {
+    "id": 3,
+    "name": "String 2 material build-up/ Ring formation in cyclone cone/ cyclone jamming",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "STAGE_1_RIGHT_CYCLONE_DRAFT_PRESSURE",
+            "op": ">",
+            "value": -100,
+            "duration_s": 60,
+            "units": "mmwc"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Inlet duct choking / Material build-up in cyclone cone, possibility of cyclone jamming",
+    "recommendation": "Inspect and clean string 2 material build-up/ cyclone jamming"
+  },
+  {
+    "id": 4,
+    "name": "Preheater Fan Speed Fluctuation",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": "<",
+            "value": 600,
+            "duration_s": 0,
+            "units": "rpm"
+          },
+          {
+            "param": "KILN_FEED_RATE",
+            "op": ">",
+            "value": 250,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 2,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Preheater Fan Speed Fluctuation",
+    "recommendation": "Preheater Fan issue, VFD fault"
+  },
+  {
+    "id": 5,
+    "name": "Preheater Fan Bearing Temperature High",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": ">",
+            "value": 600,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PHFANFAN_BEARING_TEMP_DE",
+            "op": ">",
+            "value": 60,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_FAN_BEARING_TEMP_NDE",
+            "op": ">",
+            "value": 55,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Fan inefficiency, overload, bearing damage, excess/ lack of lubrication",
+    "recommendation": "Reduce load, Inspect fan bearings, Check coupling, check bearing lubrication"
+  },
+  {
+    "id": 6,
+    "name": "Preheater Fan Motor Bearing Temperature High",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": ">",
+            "value": 600,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PHFAN_MOTOR_BEARING_TEMP_DE",
+            "op": ">",
+            "value": 50,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_MOTOR_BEARING_TEMP_NDE",
+            "op": ">",
+            "value": 70,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Fan inefficiency, overload, bearing damage, excess/ lack of lubrication",
+    "recommendation": "Reduce load, Inspect fan bearings, Check coupling, check bearing lubrication"
+  },
+  {
+    "id": 7,
+    "name": "Preheater Fan Winding Temperature High",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": ">",
+            "value": 600,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PHFAN_WINDINGTEMP_2",
+            "op": ">",
+            "value": 75,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_3",
+            "op": ">",
+            "value": 75,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_4",
+            "op": ">",
+            "value": 75,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_5",
+            "op": ">",
+            "value": 75,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_6",
+            "op": ">",
+            "value": 75,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_7",
+            "op": ">",
+            "value": 77,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "PHFAN_WINDINGTEMP_9",
+            "op": ">",
+            "value": 77,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Fan inefficiency, overload, bearing issue, winding heating",
+    "recommendation": "Reduce load, Inspect fan bearings, Check coupling, check cooling water temperature, check for any mechanical/ electrical overloads"
+  },
+  {
+    "id": 8,
+    "name": "Preheater fan high vibrations",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": ">",
+            "value": 600,
+            "duration_s": 60,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PHFAN_VIBRATION_DEVERTICAL",
+            "op": ">",
+            "value": 3,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "PHFAN_VIBRATION_NDE_VERTICAL",
+            "op": ">",
+            "value": 3,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "PHFAN_VIBRATION_DE_HORIZONTAL",
+            "op": ">",
+            "value": 3,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "PHFAN_VIBRATION_NDE_HORZONTAL",
+            "op": ">",
+            "value": 3,
+            "duration_s": 60,
+            "units": "mm/s"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Imbalance, bearing wear",
+    "recommendation": "Inspect bearings, Balance fan, misalignment, Check coupling, Schedule preventive maintenance"
+  },
+  {
+    "id": 9,
+    "name": "Precalciner pressure abnormal conditions",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          },
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": "<",
+            "value": 600,
+            "duration_s": 120,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "CALCINER_INLET_PRESSURE_PT1",
+            "op": ">",
+            "value": -70,
+            "duration_s": 120,
+            "units": "mmWC"
+          },
+          {
+            "param": "CALCINER_OUTLET_PRESSURE_PT2",
+            "op": ">",
+            "value": -80,
+            "duration_s": 120,
+            "units": "mmWC"
+          },
+          {
+            "param": "CALCINER_OUTLET_PRESSURE_PT3",
+            "op": ">",
+            "value": -85,
+            "duration_s": 120,
+            "units": "mmWC"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "No proper hot gas circulation through calciner. Impacting residence time",
+    "recommendation": "Check preheater fan status, speed and Inspect Calciner duct, false air ingress"
+  },
+  {
+    "id": 10,
+    "name": "Precalciner pressure abnormal conditions (range)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": "between",
+            "value": {
+            "low": 250,
+            "high":450
+            },
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": "between",
+            "value":{
+            "low": 2,
+            "high":4
+            },
+            "duration_s": 0,
+            "units": "rpm"
+          },
+          {
+            "param": "PREHEATER_FAN1_SPEED",
+            "op": "<",
+            "value": 600,
+            "duration_s": 120,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "CALCINER_INLET_PRESSURE_PT1",
+            "op": ">",
+            "value": -40,
+            "duration_s": 120,
+            "units": "mmWC"
+          },
+          {
+            "param": "CALCINER_OUTLET_PRESSURE_PT2",
+            "op": ">",
+            "value": -30,
+            "duration_s": 120,
+            "units": "mmWC"
+          },
+          {
+            "param": "CALCINER_OUTLET_PRESSURE_PT3",
+            "op": ">",
+            "value": -25,
+            "duration_s": 120,
+            "units": "mmWC"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "No proper hot gas circulation through calciner. Impacting residence time",
+    "recommendation": "Check preheater fan status, speed and Inspect Calciner duct, false air ingress"
+  },
+  {
+    "id": 11,
+    "name": "CO/O2 limit breach in precalciner",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "CALC_O_L_ANALYSER_CO_CONTENT",
+            "op": ">",
+            "value": 700,
+            "duration_s": 300,
+            "units": "%"
+          },
+          {
+            "param": "CALC_O_L_ANALYSER_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 3,"high": 7
+            },
+            "duration_s": 300,
+            "units": "%"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Incompleted combustion of calciner fuel",
+    "recommendation": "Monitor air flow and fuel firing rate in calciner"
+  },
+  {
+    "id": 12,
+    "name": "Precalciner fuel supply malfunctioning",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 250,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 1,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "FUEL_FIRING_RATE_IN_CALCINER",
+            "op": "<",
+            "value": 20,
+            "duration_s": 120,
+            "units": "TPH"
+          },
+          {
+            "param": "PC_COAL_CONVEYING_BLOWER1_CURRENT",
+            "op": ">",
+            "value": 210,
+            "duration_s": 120,
+            "units": "amp"
+          },
+          {
+            "param": "PC_COAL_CONVEYING_BLOWER2_CURRENT",
+            "op": ">",
+            "value": 220,
+            "duration_s": 120,
+            "units": "amp"
+          },
+          {
+            "param": "PC_COAL_CONVEYING_BLOWER1_SPEED",
+            "op": "between",
+            "value": {"low": 10,"high":1000},
+            "duration_s": 120,
+            "units": "rpm"
+          },
+          {
+            "param": "PC_COAL_CONVEYING_BLOWER2_SPEED",
+            "op": "between",
+            "value": {"low": 10,"high":1000},
+            "duration_s": 120,
+            "units": "rpm"
+          },
+          {
+            "param": "PC_ROTARY_VALUE_FEEDER_CURRENT",
+            "op": ">",
+            "value": 2,
+            "duration_s": 120,
+            "units": "amp"
+          },
+          {
+            "param": "PC_ROTARY_VALUE_FEEDER_SPEED",
+            "op": "<",
+            "value": 400,
+            "duration_s": 120,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Fuel feed inconsistency",
+    "recommendation": "Troubleshoot rotary feeder and coal conveying blower, monitor firing rate in calciner, Check moisture content in coal"
+  },
+  {
+    "id": 13,
+    "name": "Inefficient calcination in precalciner",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 800,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 800,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_TERTIARY_TEMP",
+            "op": "<",
+            "value": 750,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Under-calcination due to low temperature, poor heat transfer and residence time, air-fuel imbalance.",
+    "recommendation": "Inspect preheater fan speed, Monitor Kiln tertiary temperature, Kiln and precalciner fuel firing rate"
+  },
+  {
+    "id": 14,
+    "name": "Inefficient calcination in precalciner (less fuel firing)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "FUEL_FIRING_RATE_IN_CALCINER",
+            "op": "between",
+            "value": {"low": 16,"high":22},
+            "duration_s": 60,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "less fuel firing",
+    "recommendation": "Check for fuel flowability in firing line, clean firing line"
+  },
+  {
+    "id": 15,
+    "name": "Inefficient calcination in precalciner (less fuel firing, range)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": "between",
+            "value": {"low": 250,"high": 450},
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": "between",
+            "value": {"low": 2,"high": 4},
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "FUEL_FIRING_RATE_IN_CALCINER",
+            "op": "<",
+            "value": 16,
+            "duration_s": 0,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "less fuel firing",
+    "recommendation": "Check for fuel flowability in firing line, clean firing line"
+  },
+  {
+    "id": 16,
+    "name": "Inefficient calcination in precalciner (over burning)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": ">",
+            "value": 1000,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": ">",
+            "value": 1000,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "FUEL_FIRING_RATE_IN_CALCINER",
+            "op": ">",
+            "value": 40,
+            "duration_s": 60,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_TERTIARY_TEMP",
+            "op": ">",
+            "value": 1150,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Over burning",
+    "recommendation": "Reduce fuel"
+  },
+  {
+    "id": 17,
+    "name": "Kiln feed diverted",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_STATUS",
+            "op": "<",
+            "value": 5,
+            "duration_s": 0,
+            "units": ""
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          },
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Kiln feeding stopped",
+    "recommendation": "Kiln feed diverted"
+  },
+  {
+    "id": 18,
+    "name": "Kiln over filling",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FILLING",
+            "op": ">",
+            "value": 18,
+            "duration_s": 0,
+            "units": "%"
+          },
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Kiln filling is high",
+    "recommendation": "Reduce Kiln feed, increase kiln RPM"
+  },
+  {
+    "id": 19,
+    "name": "Kiln Main drive overload",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_MAIN_DRIVE_CURRENT",
+            "op": ">",
+            "value": 65,
+            "duration_s": 120,
+            "units": "amp"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_KW",
+            "op": ">",
+            "value": 650,
+            "duration_s": 120,
+            "units": "kw"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "High feed rate, Material accumulation",
+    "recommendation": "Stabilize the feed, Plan schedule maintenance to remove deposits"
+  },
+  {
+    "id": 20,
+    "name": "Machine running above capacity",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 6,
+            "duration_s": 120,
+            "units": "rpm"
+          },
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 600,
+            "duration_s": 120,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "High feed rate, machine working at over capacity",
+    "recommendation": "Stabilize the feed"
+  },
+  {
+    "id": 21,
+    "name": "Kiln Gear box high vibrations",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 0.5,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_GB_BRG_VIB_DE_X",
+            "op": ">",
+            "value": 4,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "KILN_GB_BRG_VIB_DE_Y",
+            "op": ">",
+            "value": 4,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "KILN_GB_BRG_VIB_NDE_X",
+            "op": ">",
+            "value": 4,
+            "duration_s": 60,
+            "units": "mm/s"
+          },
+          {
+            "param": "KILN_GB_BRG_VIB_NDE_Y",
+            "op": ">",
+            "value": 4,
+            "duration_s": 60,
+            "units": "mm/s"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Miss-alignment, lose bolts",
+    "recommendation": "Inspect bearing defects, misalignment, inspect rotating parts"
+  },
+  {
+    "id": 22,
+    "name": "Kiln Gear box Lubrication system malfunctioning",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 0.5,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_GB_LUBE_OIL_FLOW",
+            "op": "<",
+            "value": 110,
+            "duration_s": 60,
+            "units": "lpm"
+          },
+          {
+            "param": "KILN_GB_LUB_PUMP_DISCHARGE_OIL_PRESSURE",
+            "op": "<",
+            "value": 4,
+            "duration_s": 60,
+            "units": "bar"
+          },
+          {
+            "param": "GB_LUB_OIL_TEMP",
+            "op": ">",
+            "value": 50,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Gear bearing will be heated up, starts the bearing wear.",
+    "recommendation": "Check oil quality, pump cavitation, make-up lube oil"
+  },
+  {
+    "id": 23,
+    "name": "Kiln roller bearing temperature high",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 0.5,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_ROLLER_BEARING_1_TEMP_1",
+            "op": ">",
+            "value": 45,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_1_TEMP_2",
+            "op": ">",
+            "value": 45,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_1_TEMP_3",
+            "op": ">",
+            "value": 45,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_1_TEMP_4",
+            "op": ">",
+            "value": 45,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_2_TEMP_5",
+            "op": ">",
+            "value": 50,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_2_TEMP_6",
+            "op": ">",
+            "value": 55,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_2_TEMP_7",
+            "op": ">",
+            "value": 55,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_2_TEMP_8",
+            "op": ">",
+            "value": 50,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_3_TEMP_9",
+            "op": ">",
+            "value": 55,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_3_TEMP_A",
+            "op": ">",
+            "value": 60,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_3_TEMP_B",
+            "op": ">",
+            "value": 60,
+            "duration_s": 60,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_ROLLER_BEARING_3_TEMP_C",
+            "op": ">",
+            "value": 55,
+            "duration_s": 60,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Roller bearing issue, Lubrication oil issue or Oil leakage, Circulating water system issue",
+    "recommendation": "Inspect bearing defects, misalignment, inspect rotating parts, check and replace lubrication oil, check for circulating water flow"
+  },
+  {
+    "id": 24,
+    "name": "Kiln Firing System Malfunction Or Kiln Burner/flame malformation (too long/short, impingement)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "JET_AIR_BLOWER_2_SPEED",
+            "op": "<",
+            "value": 800,
+            "duration_s": 120,
+            "units": "rpm"
+          },
+          {
+            "param": "KILN_COAL_CONVEYING_BLOWER1_SPEED",
+            "op": "between",
+            "value": {"low": 10,"high": 1000},
+            "duration_s": 120,
+            "units": "rpm"
+          },
+          {
+            "param": "KILN_COAL_CONVEYING_BLOWER2_SPEED",
+            "op": "between",
+            "value": {"low": 10,"high": 1000},
+            "duration_s": 120,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Undesired temperature profile near the flame and end of the kiln",
+    "recommendation": "Adjust the jet air blower speed according to the kiln temp, plan safe inspection to check the qulity of shell lining / refractory bricks"
+  },
+  {
+    "id": 25,
+    "name": "Kiln Firing Rate Fluctuation",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "FUEL_FIRING_RATE_IN_KILN",
+            "op": "between",
+            "value": {"low": 12,"high": 16},
+            "duration_s": 300,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Kiln firing rate fluctuation",
+    "recommendation": "Check for fuel flowability in firing line, clean firing line"
+  },
+  {
+    "id": 26,
+    "name": "Kiln Firing Rate Fluctuation (low)",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": "between",
+            "value": {"low": 250,"high": 450},
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": "between",
+            "value": {"low": 2,"high": 4},
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "FUEL_FIRING_RATE_IN_KILN",
+            "op": "<",
+            "value": 12,
+            "duration_s": 300,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Kiln firing rate fluctuation",
+    "recommendation": "Check for fuel flowability in firing line, clean firing line"
+  },
+  {
+    "id": 27,
+    "name": "Secondary air and Tertiary air temperature profile disturbance",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE"
+,
+            "op": ">",
+            "value": 450,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_SECONDARY_TEMP",
+            "op": "<",
+            "value": 1000,
+            "duration_s": 180,
+            "units": "°C"
+          },
+          {
+            "param": "KILN_TERTIARY_TEMP",
+            "op": "<",
+            "value": 900,
+            "duration_s": 180,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Coal quality, Incomplete combustion, air-fuel imbalance",
+    "recommendation": "Adjust fuel flow rate to kiln main burner and jet blower speed."
+  },
+  {
+    "id": 28,
+    "name": "Kiln Inlet O2/ CO limit breach",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": ">",
+            "value": 250,
+            "duration_s": 0,
+            "units": "TPH"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 2,
+            "duration_s": 0,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "KILN_I_L_ANALY_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 2, "high": 8},
+            "duration_s": 60,
+            "units": "%"
+          },
+          {
+            "param": "KILN_I_L_ANALY_CO_CONTENT",
+            "op": ">",
+            "value": 500,
+            "duration_s": 60,
+            "units": "%"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Air ingress at kiln inlet, incomplete fuel combustion, false readings",
+    "recommendation": "Possible leakages at preheater and Kiln inlet area, incomplete combustion of fuel,  faulty sensor"
+  },
+  {
+    "id": 29,
+    "name": "Low fuel efficiency",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "AND", 
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": "<",
+            "value": 400,
+            "duration_s": 60,
+            "units": "TPH"
+          },
+          {
+            "param": "SHC",
+            "op": ">",
+            "value": 750,
+            "duration_s": 60,
+            "units": "kcal"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "low feed rate and high fuel consumption",
+    "recommendation": "Check and stabilize the Kiln feed and adjust the fuel supply"
+  },
+
+  {"id": 30,
+    "name": "Preheater Exit temperature high_1",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_1_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "PH_OUTLET_2_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_INLET_PRESSURE",
+            "op": "between",
+            "value": [-60, -40],
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 300,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_FEED_RATE",
+            "op": "<",
+            "value": 450,
+            "duration_s": 300,
+            "units": "TPH"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Low or uneven raw meal flow",
+    "recommendation": "Adjust kiln feed"
+  },
+  {"id": 31,
+    "name": "Preheater Exit temperature high_2",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_1_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "PH_OUTLET_2_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_INLET_PRESSURE",
+            "op": "between",
+            "value": [-60, -40],
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 300,
+            "units": "rpm"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "TOTAL_FUEL_IN_PERCENT",
+            "op": ">",
+            "value": 14,
+            "duration_s": 300,
+            "units": "%"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Poor calcination efficiency  (excess fuel is being fired)",
+    "recommendation": "Reduce kiln fuel as per available margin"
+  },
+  {"id": 32,
+    "name": "Preheater Exit temperature high_3",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_1_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "PH_OUTLET_2_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+            {
+            "param": "PH1_O_L_ANALYSER_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 4, "high": 7},
+            "duration_s": 300,
+            "units": "%"
+          },
+          {
+            "param": "PH2_O_L_ANALYSER_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 4, "high": 7},
+            "duration_s": 300,
+            "units": "%"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_INLET_PRESSURE",
+            "op": "<",
+            "value":-60,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 300,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Excess air (fan / draft mismanagement)",
+    "recommendation": "Adjust ID fan speed"
+  },
+  {"id": 33,
+    "name": "Preheater Exit temperature high_4",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_1_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "PH_OUTLET_2_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH1_O_L_ANALYSER_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 3, "high": 5},
+            "duration_s": 300,
+            "units": "%"
+          },
+          {
+            "param": "PH2_O_L_ANALYSER_O2_CONTENT",
+            "op": "between",
+            "value": {"low": 3, "high": 5},
+            "duration_s": 300,
+            "units": "%"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_INLET_PRESSURE",
+            "op": "between",
+            "value": [-60, -40],
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 300,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Excessive false air ingress",
+    "recommendation": "Inspect and arrest leakages"
+  },
+  {"id": 34,
+    "name": "Preheater Exit temperature high_5",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "PH_OUTLET_1_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "PH_OUTLET_2_GAS_TEMP",
+            "op": ">",
+            "value": 300,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT2",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "CALCINER_OUTLET_TEMP_TT3",
+            "op": "<",
+            "value": 850,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      },
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "STRING_1_CYCLONE_1_2_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_1_CYCLONE_2_3_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_1_CYCLONE_3_4_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_1_CYCLONE_4_5_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_1_CYCLONE_5_6_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_2_CYCLONE_1_2_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_2_CYCLONE_2_3_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_2_CYCLONE_3_4_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_2_CYCLONE_4_5_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "STRING_2_CYCLONE_5_6_DP_DROP_HIGH",
+            "op": ">",
+            "value": 50,
+            "duration_s": 300,
+            "units": "mmwc"
+          }
+        ]
+      },
+      {
+        "logic": "AND",
+        "checks": [
+          {
+            "param": "KILN_INLET_PRESSURE",
+            "op": "between",
+            "value": [-60, -40],
+            "duration_s": 300,
+            "units": "mmwc"
+          },
+          {
+            "param": "KILN_MAIN_DRIVE_SPEED",
+            "op": ">",
+            "value": 4,
+            "duration_s": 300,
+            "units": "rpm"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "Poor cyclone heat exchange efficiency",
+    "recommendation": "Clean cyclone build-up"
+  },
+  {
+    "id": 35,
+    "name": "String 1 Cyclone twin & 2nd heat transfer not proper_SCML_KILN",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "STRING_1_LEFT_TWIN_CYCLONE_MAT_DT_LOW",
+            "op": "<",
+            "value": 80,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "STRING_1_RIGHT_TWIN_CYCLONE_MAT_DT_LOW",
+            "op": "<",
+            "value": 80,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "STRING_1_TWIN_CYCLONE_EXAUST_DT_LOW",
+            "op": "<",
+            "value": 120,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "String 1 Cyclone twin & 2nd cyclone heat exchange is not proper, prabable cyclone/ preheater duct  material build-up.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone twin & 2nd cyclone.\nInspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 36,
+    "name": "String 2 Cyclone twin & 2nd heat transfer not proper_SCML_KILN",
+    "logic": "AND",
+    "groups": [
+      {
+        "logic": "OR",
+        "checks": [
+          {
+            "param": "STRING_2_LEFT_TWIN_CYCLONE_MAT_DT_LOW",
+            "op": "<",
+            "value": 80,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "STRING_2_RIGHT_TWIN_CYCLONE_MAT_DT_LOW",
+            "op": "<",
+            "value": 80,
+            "duration_s": 300,
+            "units": "°C"
+          },
+          {
+            "param": "STRING_2_TWIN_CYCLONE_EXAUST_DT_LOW",
+            "op": "<",
+            "value": 120,
+            "duration_s": 300,
+            "units": "°C"
+          }
+        ]
+      }
+    ],
+    "diagnostics": "String 2 Cyclone twin & 2nd cyclone heat exchange is not proper, prabable cyclone/ preheater duct  material build-up.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone twin & 2nd cyclone.\nInspect preheater ducts for deposits (use endoscope or thermal profile data)."
+
+  },
+  {
+    "id": 37,
+    "name": "String 1 Cyclone 1 & 2 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_1_2_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_1_CYCLONE_1_2_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_1_2_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C" 
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_1_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_1_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_1_2_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_1_CYCLONE_1_2_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_1_2_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_1_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": "String 1 Cyclone 1 & 2 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone 1 & 2.Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 38,
+    "name": "String 1 Cyclone 2 & 3 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_2_3_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_1_CYCLONE_2_3_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_2_3_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_2_3_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_1_CYCLONE_2_3_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_2_3_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": "String 1 Cyclone 2 & 3 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone 2 & 3.Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+    
+  },
+  {
+    "id": 39,
+    "name": "String 1 Cyclone 3 & 4 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_3_4_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_1_CYCLONE_3_4_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_3_4_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_3_4_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_1_CYCLONE_3_4_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_3_4_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": "String 1 Cyclone 3 & 4 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone 3 & 4.Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 40,
+    "name": "String 1 Cyclone 4 & 5 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_4_5_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_1_CYCLONE_4_5_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_4_5_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_4_5_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_1_CYCLONE_4_5_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_4_5_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": "String 1 Cyclone 4 & 5 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone 4 & 5.Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 41,
+    "name": "String 1 Cyclone 5 & 6 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_5_6_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_1_CYCLONE_5_6_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_5_6_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_6_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_1_CYCLONE_5_6_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_1_CYCLONE_5_6_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_CYCLONE_5_6_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_6_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]   
+     },
+    "diagnostics": "String 1 Cyclone 5 & 6 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 1 Cyclone 5 & 6.Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 42,
+    "name": "String 2 Cyclone 1 & 2 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_1_2_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_2_CYCLONE_1_2_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_1_2_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_1_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_1_2_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_2_CYCLONE_1_2_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_1_2_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_1_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]   
+     },
+    "diagnostics": "String 2 Cyclone 1 & 2 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone 1 & 2. Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 43,
+    "name": "String 2 Cyclone 2 & 3 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_2_3_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_2_CYCLONE_2_3_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_2_3_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_2_3_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_2_CYCLONE_2_3_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_2_3_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_2_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]   
+     },
+    "diagnostics": "String 2 Cyclone 2 & 3 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone 2 & 3. Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+     "id": 44,
+    "name": "String 2 Cyclone 3 & 4 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_3_4_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_2_CYCLONE_3_4_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_3_4_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_3_4_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_2_CYCLONE_3_4_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_3_4_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_3_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]   
+     },
+    "diagnostics": "String 2 Cyclone 3 & 4 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone 3 & 4. Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 45,
+    "name": "String 2 Cyclone 4 & 5 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_4_5_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_2_CYCLONE_4_5_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_4_5_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]  
+  },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_4_5_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_2_CYCLONE_4_5_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_4_5_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_4_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]   
+     },
+    "diagnostics": "String 2 Cyclone 4 & 5 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone 4 & 5. Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  },
+  {
+    "id": 46,
+    "name": "String 2 Cyclone 5 & 6 Material Build-up/ Heat Transfer not proper",
+    "logic": "IF",
+    "if": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_5_6_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+                "param": "STRING_2_CYCLONE_5_6_MATERIAL_DT_LOW",
+                "op": "<",
+                "value": 80,
+                "duration_s": 300,
+                "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_5_6_GAS_DT_LOW",
+                "op": "<",
+                "value": 120,
+                "duration_s": 300,
+                "units": "°C"
+
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_6_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]
+    },
+    "then": {
+      "logic": "OR",
+      "checks": [
+        {
+          "param": "PH_OUTLET_2_GAS_TEMP",
+          "op": ">",
+          "value": 300,
+          "duration_s": 300,
+          "units": "°C"
+        }
+      ]
+    },
+    "else": {
+      "logic": "AND",
+      "groups": [
+        {
+          "logic": "OR",
+          "checks": [
+            {
+              "param": "STRING_2_CYCLONE_5_6_DP_DROP_HIGH",
+              "op": ">",
+              "value": 50,
+              "duration_s": 300,
+              "units": "mmwc"
+            },
+            {
+              "param": "STRING_2_CYCLONE_5_6_MATERIAL_DT_LOW",
+              "op": "<",
+              "value": 80,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_2_CYCLONE_5_6_GAS_DT_LOW",
+              "op": "<",
+              "value": 120,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_5_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            },
+            {
+              "param": "STRING_1_2_CYCLONE_6_OUTLET_GAS_DT",
+              "op": "abs_gt",
+              "value": 50,
+              "duration_s": 300,
+              "units": "°C"
+            }
+          ]
+        },
+        {
+          "logic": "AND",
+          "checks": [
+            {
+              "param": "KILN_MAIN_DRIVE_SPEED",
+              "op": ">",
+              "value": 4,
+              "duration_s": 300,
+              "units": "rpm"
+            }
+          ]
+        }
+      ]    
+    },
+    "diagnostics": "String 2 Cyclone 5 & 6 pressure-drop increase,  heat transfer not proper and high PH exit gas temperature indicates cyclone/ preheater duct  material build-up reducing heat exchange.",
+    "recommendation": "Schedule online cleaning/ sootblowing for String 2 Cyclone 5 & 6. Inspect preheater ducts for deposits (use endoscope or thermal profile data)."
+  }
+]

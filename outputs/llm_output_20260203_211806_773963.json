@@ -1,0 +1,19 @@
+{
+  "severity": "mild",
+  "diagnostics": [
+    "Preheater outlets running reducing: PH1 CO mean 412 and O2 2.18%; PH2 CO mean 405 and O2 1.78% (risk of CO spikes/afterburn in PH/ESP).",
+    "Calciner shows moderate CO (mean 82.6; max 216) with O2 ~5.32%, indicating incomplete burn episodes tied to fuel/air distribution.",
+    "Very high O2 at kiln inlet (mean 13.99%) versus PH outlets (~2%); indicates significant false air ingress between PH and kiln inlet (riser/smoke chamber/seals).",
+    "AFR feed rate highly variable (0.53–6.07; σ=1.59 on mean 3.21), likely driving CO instability.",
+    "Kiln hood pressure peaks close to zero (max -0.70 mbar), narrowing safety margin against positive puffs.",
+    "Stage-1 left outlet gas pressure is erratic (σ≈11.6 mbar), consistent with draft/combustion instability."
+  ],
+  "recommendations": [
+    "Raise excess air to the calciner and/or optimize tertiary/TA air distribution to maintain PH outlet O2 3–4% and CO <100; adjust PC vs MB split and swirl/jet air as needed.",
+    "Stabilize AFR firing: apply feed-rate ramp limits and CO/O2-based override (e.g., suspend AFR increases if PH O2 <2.5% or CO >150).",
+    "Investigate and reduce false air: inspect kiln inlet seal, riser/smoke chamber doors and gaskets, TA duct flanges; perform an O2 leak survey. Target kiln inlet O2 3–5%.",
+    "Tighten hood draft control to keep KILN_HOOD_PRESSURE consistently in -2 to -5 mbar by fine-tuning ID/PH fan setpoints and PID gains.",
+    "Verify gas analyzers (PH1/PH2, calciner, kiln inlet) with a portable and recalibrate to rule out bias.",
+    "If CO excursions persist, enable/raise CO-based interlocks for ESP/RABH and temporarily increase upstream O2 setpoint to >6% until stable."
+  ]
+}
