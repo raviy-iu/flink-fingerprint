@@ -1,0 +1,19 @@
+{
+  "severity": "critical",
+  "diagnostics": [
+    "BAG_HOUSE_FAN_KW swings 6.8–99.2 kW in the short window (std 29.4 kW), consistent with rapid fan cycling or power meter scaling/wiring error.",
+    "CF_SILO_FEEDING_BE_CURRENT_DRIVE1/DRIVE2 vary 0.35–99 A with high dispersion (std ~28 A), indicating repeated starts/overload trips or noisy/incorrect CT scaling.",
+    "CF_SILO_LEVEL (empty height) changes 3.9–98.6 m within minutes—physically impossible; strong evidence of level transmitter fault or tag mapping/scaling error.",
+    "HOT_DUST_BIN_WEIGHT jumps 0.125–97.4 t—implausible for process dynamics; likely load cell/weigh system fault or wrong tag.",
+    "Pattern of values spanning near 0–100 across multiple tags suggests normalization/mis-scaling or OPC/SCADA tag misalignment rather than true process behavior."
+  ],
+  "recommendations": [
+    "Immediately verify actual equipment status in DCS/historian: confirm if baghouse fan and CF silo bucket elevators are cycling; if yes, place in manual and hold a safe minimum fan speed and stop start-chattering while investigating interlocks.",
+    "Audit tag mapping/scaling for 0001–0005: confirm engineering units, raw ranges, and any 0–100 normalization; correct OPC/SCADA scaling and unit conversions; disable suspect signals for control until validated.",
+    "Baghouse fan: check VFD alarms/trips, PID setpoint stability, anti-windup and rate limits; verify power meter CT/PT wiring and calibration.",
+    "Bucket elevators: inspect for overloads, belt slip or jams; review motor protection settings; implement level control hysteresis/anti-chatter timers tied to valid level signal.",
+    "CF silo level: inspect radar/ultrasonic/transmitter installation, purge/aiming; increase damping/filtering; re-range and recalibrate.",
+    "Hot dust bin weighing: check load cells, junction box, cabling; verify mechanical free movement; perform zero/span calibration and apply reasonable filtering.",
+    "If data corruption suspected: verify time sync, network health, and historian/PLC tag bindings for duplicates/misalignments; cross-check against local indicators."
+  ]
+}

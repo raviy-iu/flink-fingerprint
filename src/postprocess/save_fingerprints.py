@@ -80,7 +80,7 @@ class FingerprintSaver:
                 # Clean old data (keep last 5 minutes worth)
                 self._cleanup_old_sensor_data(equip_id, timestamp)
 
-    def _cleanup_old_sensor_data(self, equip_id: int, current_timestamp: int):
+    def _cleanup_old_sensor_data(self, equip_id: str, current_timestamp: int):
         """Remove sensor data older than 5 minutes from current timestamp"""
         cutoff = current_timestamp - (5 * 60 * 1000)  # 5 minutes in ms
         self.sensor_data_buffer[equip_id] = [
@@ -110,19 +110,19 @@ class FingerprintSaver:
             print(f"[Warning] Invalid fingerprint data: {fingerprint_data}")
             return
 
-        # Convert equip_id to int for lookup
-        equip_id_int = int(equip_id) if isinstance(equip_id, str) else equip_id
+        # equip_id is now a string (machine_name like "SCL_LINE_2_KILN")
+        equip_id_str = str(equip_id)
 
         # Find corresponding sensor data within the window
         matching_sensor_data = self._find_sensor_data_in_window(
-            equip_id_int, start_ms, end_ms
+            equip_id_str, start_ms, end_ms
         )
 
         # Build combined output
         combined_output = {
             "fingerprint": fingerprint,
             "sensor_data": {
-                "equip_id": equip_id_int,
+                "equip_id": equip_id_str,
                 "window": {
                     "start_ms": start_ms,
                     "end_ms": end_ms,
@@ -138,7 +138,7 @@ class FingerprintSaver:
         self._save_to_file(fingerprint_id, start_ms, end_ms, combined_output)
 
     def _find_sensor_data_in_window(
-        self, equip_id: int, start_ms: int, end_ms: int
+        self, equip_id: str, start_ms: int, end_ms: int
     ) -> list:
         """Find all sensor data for equip_id within the time window"""
         matching_data = []

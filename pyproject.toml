@@ -1,15 +1,28 @@
 [project]
 name = "flink-fingerprint"
 version = "0.1.0"
-description = "PyFlink streaming fingerprint generation for equipment sensors"
+description = "PyFlink streaming fingerprint generation for equipment sensors with real plant data integration"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 
 dependencies = [
+    # Kafka messaging
     "kafka-python>=2.0.2",
+
+    # Data processing
     "pandas>=2.0.0",
     "numpy>=1.24.0",
+
+    # API requests (used in data_input/api.py)
+    "requests>=2.28.0",
+
+    # LLM inference
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+
+    # Excel file handling (Kiln_mapping.xlsx, etc.)
+    "openpyxl>=3.1.0",
 ]
 
 [project.optional-dependencies]
@@ -20,6 +33,10 @@ dev = [
     "pytest>=7.0.0",
     "black>=23.0.0",
     "isort>=5.12.0",
+    "ruff>=0.1.0",
+]
+all = [
+    "flink-fingerprint[flink,dev]",
 ]
 
 [build-system]
@@ -37,3 +54,7 @@ target-version = ['py38', 'py39', 'py310', 'py311']
 [tool.isort]
 profile = "black"
 line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"

@@ -1,0 +1,1087 @@
+{
+  "0001": {
+    "tag": "BAG_HOUSE_FAN_KW",
+    "uom": "kw",
+    "metaData": "Instantaneous power consumption of the bag house fan"
+  },
+  "0002": {
+    "tag": "CF_SILO_FEEDING_BE_CURRENT_DRIVE1",
+    "uom": "amp",
+    "metaData": "Current drawn by the bucket elevator feeding the Blending silo"
+  },
+  "0003": {
+    "tag": "CF_SILO_FEEDING_BE_CURRENT_DRIVE2",
+    "uom": "amp",
+    "metaData": "Current drawn by the bucket elevator feeding the Blending silo"
+  },
+  "0004": {
+    "tag": "CF_SILO_LEVEL",
+    "uom": "m",
+    "metaData": "Empty height level of the Blending silo"
+  },
+  "0005": {
+    "tag": "HOT_DUST_BIN_WEIGHT",
+    "uom": "ton",
+    "metaData": "Weight of hot dust bin"
+  },
+  "0006": {
+    "tag": "KF_BUCKET_ELEVATOR_CURRENT_DRIVE1",
+    "uom": "amp",
+    "metaData": "Current drawn by the first bucket elevator feeding the kiln"
+  },
+  "0007": {
+    "tag": "KF_BUCKET_ELEVATOR_CURRENT_DRIVE2",
+    "uom": "amp",
+    "metaData": "Current drawn by the second bucket elevator feeding the kiln"
+  },
+  "0008": {
+    "tag": "KILN_FEED_ROTO_SCALE_TPH",
+    "uom": "TPH",
+    "metaData": "Meal feed rate to Kiln through PFISTER"
+  },
+  "0009": {
+    "tag": "KILN_FEED_SFF_TPH",
+    "uom": "TPH",
+    "metaData": "Meal feed rate to Kiln through SFF"
+  },
+  "0010": {
+    "tag": "SCL_LINE_2_KILN_FEED_TPH",
+    "uom": "tph",
+    "metaData": "Instantaneous feed rate from SFF1"
+  },
+  "0011": {
+    "tag": "MB_FIRING_FEED_RATE",
+    "uom": "m3/min",
+    "metaData": "Kiln main burner firing feed rate"
+  },
+  "0012": {
+    "tag": "SCL_LINE_2_KILN_FEED_AL2O3",
+    "uom": "%",
+    "metaData": "Alumina content percentage in kiln feed"
+  },
+  "0013": {
+    "tag": "SCL_LINE_2_KILN_FEED_AM",
+    "uom": "%",
+    "metaData": "Alumina Modulus (AM), calculated as ratio"
+  },
+  "0014": {
+    "tag": "SCL_LINE_2_KILN_FEED_CAO",
+    "uom": "%",
+    "metaData": "Calcium oxide (CaO) percentage in kiln feed"
+  },
+  "0015": {
+    "tag": "SCL_LINE_2_KILN_FEED_CL",
+    "uom": "%",
+    "metaData": "Chlorine percentage in kiln feed"
+  },
+  "0016": {
+    "tag": "SCL_LINE_2_KILN_FEED_FE2O3",
+    "uom": "%",
+    "metaData": "Ferric oxide percentage in kiln feed"
+  },
+  "0017": {
+    "tag": "SCL_LINE_2_KILN_FEED_K2O",
+    "uom": "%",
+    "metaData": "Potassium oxide content in kiln feed"
+  },
+  "0018": {
+    "tag": "SCL_LINE_2_KILN_FEED_LOI",
+    "uom": "%",
+    "metaData": "Loss on Ignition"
+  },
+  "0019": {
+    "tag": "SCL_LINE_2_KILN_FEED_LSF",
+    "uom": "%",
+    "metaData": "Lime Saturation Factor (LSF)"
+  },
+  "0020": {
+    "tag": "SCL_LINE_2_KILN_FEED_MGO",
+    "uom": "%",
+    "metaData": "Magnesium oxide (MgO) content in kiln feed"
+  },
+  "0021": {
+    "tag": "SCL_LINE_2_KILN_FEED_NA2O",
+    "uom": "%",
+    "metaData": "Sodium oxide content in kiln feed"
+  },
+  "0022": {
+    "tag": "SCL_LINE_2_KILN_FEED_REMARK",
+    "uom": "",
+    "metaData": "Operator remarks or comments associated with kiln feed analysis or status."
+  },
+  "0023": {
+    "tag": "SCL_LINE_2_KILN_FEED_RESIDUE_212_u",
+    "uom": "%",
+    "metaData": "Percentage residue retained on 212-micron sieve"
+  },
+  "0024": {
+    "tag": "SCL_LINE_2_KILN_FEED_RESIDUE_90_u",
+    "uom": "%",
+    "metaData": "Percentage residue retained on 90-micron sieve"
+  },
+  "0025": {
+    "tag": "SCL_LINE_2_KILN_FEED_SIO2",
+    "uom": "%",
+    "metaData": "Silicon dioxide content in kiln feed"
+  },
+  "0026": {
+    "tag": "SCL_LINE_2_KILN_FEED_SM",
+    "uom": "%",
+    "metaData": "Silica Modulus (SM)"
+  },
+  "0027": {
+    "tag": "SCL_LINE_2_KILN_FEED_SO3",
+    "uom": "%",
+    "metaData": "Sulphur trioxide content in kiln feed"
+  },
+  "0028": {
+    "tag": "PH1_O_L_ANALYSER_CO_CONTENT",
+    "uom": "%",
+    "metaData": "Carbon monoxide (CO) concentration measured by on-line analyzer at Preheater 1 outlet."
+  },
+  "0029": {
+    "tag": "PH1_O_L_ANALYSER_O2_CONTENT",
+    "uom": "%",
+    "metaData": "Oxygen concentration measured by on-line analyzer at Preheater 1 outlet"
+  },
+  "0030": {
+    "tag": "PH2_O_L_ANALYSER_CO_CONTENT",
+    "uom": "%",
+    "metaData": "Carbon monoxide (CO) concentration measured by on-line analyzer at Preheater 2 outlet."
+  },
+  "0031": {
+    "tag": "PH2_O_L_ANALYSER_O2_CONTENT",
+    "uom": "%",
+    "metaData": "Oxygen concentration measured by on-line analyzer at Preheater 2 outlet"
+  },
+  "0032": {
+    "tag": "PHFANFAN_BEARING_TEMP_DE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of Preheater Fan 1 drive-end bearing (TB01)"
+  },
+  "0033": {
+    "tag": "PHFAN_FAN_BEARING_TEMP_NDE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of Preheater Fan non-drive-end bearing"
+  },
+  "0034": {
+    "tag": "PHFAN_MOTOR_BEARING_TEMP_DE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of Preheater Fan motor  drive-end motor bearing"
+  },
+  "0035": {
+    "tag": "PHFAN_MOTOR_BEARING_TEMP_NDE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of Preheater Fan motor  drive-end motor bearing"
+  },
+  "0036": {
+    "tag": "PHFAN_VIBRATION_DEVERTICAL",
+    "uom": "mm/s",
+    "metaData": "Vertical vibration level measured at drive-end of Preheater Fan"
+  },
+  "0037": {
+    "tag": "PHFAN_VIBRATION_DE_HORIZONTAL",
+    "uom": "mm/s",
+    "metaData": "Horizontal vibration level measured at drive-end of Preheater Fan"
+  },
+  "0038": {
+    "tag": "PHFAN_VIBRATION_NDE_HORZONTAL",
+    "uom": "mm/s",
+    "metaData": "Horizontal vibration level measured at non-drive-end of Preheater Fan"
+  },
+  "0039": {
+    "tag": "PHFAN_VIBRATION_NDE_VERTICAL",
+    "uom": "mm/s",
+    "metaData": "Vertical vibration level measured at non-drive-end of Preheater Fan"
+  },
+  "0040": {
+    "tag": "PHFAN_WINDINGTEMP_2",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 2"
+  },
+  "0041": {
+    "tag": "PHFAN_WINDINGTEMP_3",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 3"
+  },
+  "0042": {
+    "tag": "PHFAN_WINDINGTEMP_4",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 4"
+  },
+  "0043": {
+    "tag": "PHFAN_WINDINGTEMP_5",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 5"
+  },
+  "0044": {
+    "tag": "PHFAN_WINDINGTEMP_6",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 6"
+  },
+  "0045": {
+    "tag": "PHFAN_WINDINGTEMP_7",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 7"
+  },
+  "0046": {
+    "tag": "PHFAN_WINDINGTEMP_8",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 8"
+  },
+  "0047": {
+    "tag": "PHFAN_WINDINGTEMP_9",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor 9"
+  },
+  "0048": {
+    "tag": "PHFAN_WINDINGTEMP_A",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor A"
+  },
+  "0049": {
+    "tag": "PHFAN_WINDINGTEMP_B",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor B"
+  },
+  "0050": {
+    "tag": "PHFAN_WINDINGTEMP_C",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of motor winding Preheater Fan, sensor C"
+  },
+  "0051": {
+    "tag": "PH_FAN_INLET_DRAUGHT",
+    "uom": "%",
+    "metaData": "Draft pressure measured at the inlet of Preheater Fan 1"
+  },
+  "0052": {
+    "tag": "PH_FAN_INLET_TEMPERATURE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of process gas at the inlet of Preheater Fan 1"
+  },
+  "0053": {
+    "tag": "PH_FAN_OUTLET_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Tempearture measured at Preheater fan outlet"
+  },
+  "0054": {
+    "tag": "PH_FRESH_AIR_DAMPER_1",
+    "uom": "%",
+    "metaData": "Preheater Fresh air Damper position"
+  },
+  "0055": {
+    "tag": "PH_FRESH_AIR_DAMPER_2",
+    "uom": "%",
+    "metaData": "Preheater Fresh air Damper position"
+  },
+  "0056": {
+    "tag": "PH_OUTLET_1_GAS_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Preheater outlet gas pressure"
+  },
+  "0057": {
+    "tag": "PH_OUTLET_GAS_PRESSURE_1",
+    "uom": "mbar",
+    "metaData": "Preheater outlet gas pressure"
+  },
+  "0058": {
+    "tag": "PREHEATER_FAN_OUTLET_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Preheater outlet gas pressure"
+  },
+  "0059": {
+    "tag": "PH_OUTLET_2_GAS_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Preheater outlet gas pressure"
+  },
+  "0060": {
+    "tag": "PH_OUTLET_GAS_PRESSURE_2",
+    "uom": "mbar",
+    "metaData": "Preheater outlet gas pressure"
+  },
+  "0061": {
+    "tag": "PH_OUTLET_1_GAS_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Preheater outlet gas temperature"
+  },
+  "0062": {
+    "tag": "PH_OUTLET_2_GAS_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Preheater outlet gas temperature"
+  },
+  "0063": {
+    "tag": "PREHEATER_FAN1_CURRENT",
+    "uom": "amp",
+    "metaData": "Electrical current drawn by Preheater Fan motor"
+  },
+  "0064": {
+    "tag": "PREHEATER_FAN1_SPEED",
+    "uom": "rpm",
+    "metaData": "Rotational speed of Preheater Fan"
+  },
+  "0065": {
+    "tag": "PREHEATER_FAN_POWER",
+    "uom": "kW",
+    "metaData": "Power consumption of Preheater Fan motor"
+  },
+  "0066": {
+    "tag": "RABH_I_L_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Inlet pressure of RABH"
+  },
+  "0067": {
+    "tag": "RABH_I_L_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Inlet gas temperature to RABH"
+  },
+  "0068": {
+    "tag": "RABH_O_L_PRESSURE_BHS_TOP",
+    "uom": "mbar",
+    "metaData": "Outlet pressure at top of RABH baghouse"
+  },
+  "0069": {
+    "tag": "RABH_O_L_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Outlet gas temperature from RABH after dust removal"
+  },
+  "0070": {
+    "tag": "RABH_DIFF_PRESSURE_DPT02",
+    "uom": "mbar",
+    "metaData": "Differential pressure acrossRABH"
+  },
+  "0071": {
+    "tag": "STAGE_1_RIGHT_CYCLONE_MATERIAL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 1 material temperature"
+  },
+  "0072": {
+    "tag": "STAGE_2LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mabr",
+    "metaData": "String 1 Stage 2 draught pressure"
+  },
+  "0073": {
+    "tag": "STAGE_2LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 2 exhaust gas pressure"
+  },
+  "0074": {
+    "tag": "STAGE_2RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 2 draught pressure"
+  },
+  "0075": {
+    "tag": "STAGE_2RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 2 exhaust gas pressure"
+  },
+  "0076": {
+    "tag": "STAGE_2_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 2 exhaust gas temperature"
+  },
+  "0077": {
+    "tag": "STAGE_2_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 2 material temperature"
+  },
+  "0078": {
+    "tag": "STAGE_2_RIGHT_CYCLONE_DRAFT_PRESSURE",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 2 draught pressure"
+  },
+  "0079": {
+    "tag": "STAGE_2_RIGHT_CYCLONE_MATERIAL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 2 material tempearture"
+  },
+  "0080": {
+    "tag": "STAGE_2_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 2 exhaust gas temperature"
+  },
+  "0081": {
+    "tag": "STAGE_2_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 2 materail temperature"
+  },
+  "0082": {
+    "tag": "STAGE_3LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 3 draught pressure"
+  },
+  "0083": {
+    "tag": "STAGE_3LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 3 exhaust gas pressure"
+  },
+  "0084": {
+    "tag": "STAGE_3RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 3 draught pressure"
+  },
+  "0085": {
+    "tag": "STAGE_3RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 3 exhaust gas pressure"
+  },
+  "0086": {
+    "tag": "STAGE_3_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 3 exhaust gas temperature"
+  },
+  "0087": {
+    "tag": "STAGE_3_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 3 material temperature"
+  },
+  "0088": {
+    "tag": "STAGE_3_RIGHT_CYCLONE_DRAFT_PRESSURE",
+    "uom": "mbar",
+    "metaData": "String  2 Stage 3 draught pressure"
+  },
+  "0089": {
+    "tag": "STAGE_3_RIGHT_CYCLONE_MATERIAL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 3 material temperature"
+  },
+  "0090": {
+    "tag": "STAGE_3_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 3 exhaust gas temperature"
+  },
+  "0091": {
+    "tag": "STAGE_3_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 3 material temperature"
+  },
+  "0092": {
+    "tag": "STAGE_4LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 4 draught pressure"
+  },
+  "0093": {
+    "tag": "STAGE_4LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 4 exhaust gas pressure"
+  },
+  "0094": {
+    "tag": "STAGE_4RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 4 draught pressure"
+  },
+  "0095": {
+    "tag": "STAGE_4RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 4 exhaust gas pressure"
+  },
+  "0096": {
+    "tag": "STAGE_4_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 4 exhaust gas temperature"
+  },
+  "0097": {
+    "tag": "STAGE_4_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 4 material temperature"
+  },
+  "0098": {
+    "tag": "STAGE_4_RIGHT_CYCLONE_DRAFT_PRESSURE",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 4 draught pressure"
+  },
+  "0099": {
+    "tag": "STAGE_4_RIGHT_CYCLONE_MATERIAL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 4 material temperature"
+  },
+  "0100": {
+    "tag": "STAGE_4_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 4 exhaust gas temperature"
+  },
+  "0101": {
+    "tag": "STAGE_4_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 4 material temperature"
+  },
+  "0102": {
+    "tag": "STAGE_5LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 5 draught pressure"
+  },
+  "0103": {
+    "tag": "STAGE_5LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 5 exhaust gas pressure"
+  },
+  "0104": {
+    "tag": "STAGE_5RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 5 draught pressure"
+  },
+  "0105": {
+    "tag": "STAGE_5RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 5 exhaust gas pressure"
+  },
+  "0106": {
+    "tag": "STAGE_5_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 5 exhaust gas temperature"
+  },
+  "0107": {
+    "tag": "STAGE_5_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 5 material temperature"
+  },
+  "0108": {
+    "tag": "STAGE_5_RIGHT_CYCLONE_DRAFT_PRESSURE",
+    "uom": "",
+    "metaData": "String 2 Stage 5 draught pressure"
+  },
+  "0109": {
+    "tag": "STAGE_5_RIGHT_CYCLONE_MATERIAL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 5 material temperature"
+  },
+  "0110": {
+    "tag": "STAGE_5_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 5 exhaust gas temperature"
+  },
+  "0111": {
+    "tag": "STAGE_5_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 5 material temperature"
+  },
+  "0112": {
+    "tag": "STAGE_6LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT_1",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 6 exhaust gas pressure"
+  },
+  "0113": {
+    "tag": "STAGE_6_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 6 draught pressure"
+  },
+  "0114": {
+    "tag": "STAGE_6_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT_1",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 6 draught pressure"
+  },
+  "0115": {
+    "tag": "STAGE_6_LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 6 exhaust gas pressure"
+  },
+  "0116": {
+    "tag": "STAGE_6_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 6 exhaust gas temperature"
+  },
+  "0117": {
+    "tag": "STAGE_6_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT_1",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 6 exhaust gas temperature"
+  },
+  "0118": {
+    "tag": "STAGE_6_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 6 material temperature"
+  },
+  "0119": {
+    "tag": "STAGE_6_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT_1",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 6 material temperature"
+  },
+  "0120": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_DRAFT_PRESSURE_8",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 draught pressure"
+  },
+  "0121": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_DRAFT_PRESSURE_9",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 draught pressure"
+  },
+  "0122": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 draught pressure"
+  },
+  "0123": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT_1",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 draught pressure"
+  },
+  "0124": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_MATERIAL_TEMP_8",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 material temperature"
+  },
+  "0125": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_MATERIAL_TEMP_9",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 material temperature"
+  },
+  "0126": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 exhaust gas pressure"
+  },
+  "0127": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT_1",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 6 exhaust gas pressure"
+  },
+  "0128": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 exhaust gas temperature"
+  },
+  "0129": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT_1",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 exhaust gas temperature"
+  },
+  "0130": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 material temperature"
+  },
+  "0131": {
+    "tag": "STAGE_6_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT_1",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 6 material temperature"
+  },
+  "0132": {
+    "tag": "STAGE_I_LEFT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 1 draught pressure"
+  },
+  "0133": {
+    "tag": "STAGE_I_LEFT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 1 Stage 1 exhaust gas pressure"
+  },
+  "0134": {
+    "tag": "STAGE_I_LEFT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 1 exhaust gas temperature"
+  },
+  "0135": {
+    "tag": "STAGE_I_LEFT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 1 Stage 1 material temperature"
+  },
+  "0136": {
+    "tag": "STAGE_I_RIGHT_CYCLONE_DRAFT_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 1 draught pressure"
+  },
+  "0137": {
+    "tag": "STAGE_I_RIGHT_CYCLONE_OUTLET_GAS_PRESSURE_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 1 exhaust gas pressure"
+  },
+  "0138": {
+    "tag": "STAGE_I_RIGHT_CYCLONE_OUTLET_GAS_TEMP_MEASUREMENT",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 1 exhaust gas temperature"
+  },
+  "0139": {
+    "tag": "STAGE_I_RIGHT_CYCLONE_OUTLET_MATERIAL_TEMP_MEASUREMENT",
+    "uom": "\u00b0C",
+    "metaData": "String 2 Stage 1 material temperature"
+  },
+  "0140": {
+    "tag": "STAGE_1_RIGHT_CYCLONE_DRAFT_PRESSURE",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 1 draught pressure"
+  },
+  "0141": {
+    "tag": "STAGE_1_RIGHT_CYCLONE_DRAFT_PRESSURE_2",
+    "uom": "mbar",
+    "metaData": "String 2 Stage 1 draught pressure"
+  },
+  "0142": {
+    "tag": "CALCINER_INLET_PRESSURE_PT1",
+    "uom": "mbar",
+    "metaData": "Pressure measured at calciner inlet"
+  },
+  "0143": {
+    "tag": "CALCINER_OUTLET_PRESSURE_PT2",
+    "uom": "mbar",
+    "metaData": "Pressure measured at calciner outlet, Sensor 2"
+  },
+  "0144": {
+    "tag": "CALCINER_OUTLET_PRESSURE_PT3",
+    "uom": "mbar",
+    "metaData": "Pressure measured at calciner outlet, Sensor 3"
+  },
+  "0145": {
+    "tag": "CALCINER_OUTLET_TEMP_TT2",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at calciner outlet, Sensor 2"
+  },
+  "0146": {
+    "tag": "CALCINER_OUTLET_TEMP_TT3",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at calciner outlet, Sensor 3"
+  },
+  "0147": {
+    "tag": "CALC_O_L_ANALYSER_CO_CONTENT",
+    "uom": "%",
+    "metaData": "Carbon monoxide (CO) content measured at calciner outlet"
+  },
+  "0148": {
+    "tag": "CALC_O_L_ANALYSER_O2_CONTENT",
+    "uom": "%",
+    "metaData": "Oxygen content measured at the calciner outlet"
+  },
+  "0149": {
+    "tag": "FUEL_FIRING_RATE_IN_CALCINER",
+    "uom": "m3/min",
+    "metaData": "Rate of fuel firing into the calciner for combustion"
+  },
+  "0150": {
+    "tag": "PC_COAL_CONVEYING_BLOWER1_CURRENT",
+    "uom": "amp",
+    "metaData": "Current drawn by Pre-calciner coal conveying blower 1"
+  },
+  "0151": {
+    "tag": "PC_COAL_CONVEYING_BLOWER1_SPEED",
+    "uom": "rpm",
+    "metaData": "Speed of the Pre-calciner coal conveying blower 1"
+  },
+  "0152": {
+    "tag": "PC_COAL_CONVEYING_BLOWER2_CURRENT",
+    "uom": "amp",
+    "metaData": "Current drawn by Pre-calciner coal conveying blower 2"
+  },
+  "0153": {
+    "tag": "PC_COAL_CONVEYING_BLOWER2_SPEED",
+    "uom": "rpm",
+    "metaData": "Speed of the Pre-calciner coal conveying blower 2"
+  },
+  "0154": {
+    "tag": "PC_ROTARY_VALUE_FEEDER_CURRENT",
+    "uom": "amp",
+    "metaData": "Current drawn by the Pre-calciner rotary feeder"
+  },
+  "0155": {
+    "tag": "PC_ROTARY_VALUE_FEEDER_SPEED",
+    "uom": "rpm",
+    "metaData": "Speed of the Pre-calciner rotary feeder"
+  },
+  "0156": {
+    "tag": "KILN_SECONDARY_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of secondary air entering the kiln"
+  },
+  "0157": {
+    "tag": "SECONDARY_AIR_TEMPERATURE",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of secondary air entering the kiln"
+  },
+  "0158": {
+    "tag": "KILN_TERTIARY_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of tertiary air entering the kiln"
+  },
+  "0159": {
+    "tag": "GB_LUB_OIL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of the kiln gearbox lubrication oil"
+  },
+  "0160": {
+    "tag": "GB_LUB_PRESSURE_TRANSMITTER_INLET",
+    "uom": "mbar",
+    "metaData": "Inlet pressure of the gearbox lubrication oil"
+  },
+  "0161": {
+    "tag": "GB_LUB_PRESSURE_TRANSMITTER_OUTLET",
+    "uom": "mbar",
+    "metaData": "Outlet pressure of the gearbox lubrication oil"
+  },
+  "0162": {
+    "tag": "KILN_GB_LUB_PUMP_DISCHARGE_OIL_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Kiln Gear Box Lubrication pump Oil discharge pressure"
+  },
+  "0163": {
+    "tag": "KILN_GB_BRG_VIB_DE_X",
+    "uom": "mm/s",
+    "metaData": "Vibrations measure at Drive-End of Kiln Gear Box in X-axis"
+  },
+  "0164": {
+    "tag": "KILN_GB_BRG_VIB_DE_Y",
+    "uom": "mm/s",
+    "metaData": "Vibrations measure at Drive-End of Kiln Gear Box in Y-axis"
+  },
+  "0165": {
+    "tag": "KILN_GB_BRG_VIB_NDE_X",
+    "uom": "mm/s",
+    "metaData": "Vibrations measure at Non-Drive-End of Kiln Gear Box in X-axis"
+  },
+  "0166": {
+    "tag": "KILN_GB_BRG_VIB_NDE_Y",
+    "uom": "mm/s",
+    "metaData": "Vibrations measure at Non-Drive-End of Kiln Gear Box in Y-axis"
+  },
+  "0167": {
+    "tag": "KILN_GB_LUBE_OIL_FLOW",
+    "uom": "m3/min",
+    "metaData": "Flowrate of Kiln Gear Box Lubrication Oil"
+  },
+  "0168": {
+    "tag": "HYDRAULIC_THRUST_OIL_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of the hydraulic oil in the thrust bearing system."
+  },
+  "0169": {
+    "tag": "HYDRAULIC_THRUST_POSITION_LIMIT_",
+    "uom": "m",
+    "metaData": "Maximum permissible movement of the hydraulic thrust bearing."
+  },
+  "0170": {
+    "tag": "KILN_MAIN_DRIVE_CURRENT",
+    "uom": "amp",
+    "metaData": "Electrical current drawn by the kiln main drive motor"
+  },
+  "0171": {
+    "tag": "KILN_MAIN_DRIVE_KW",
+    "uom": "kW",
+    "metaData": "Power consumption of the kiln main drive motor"
+  },
+  "0172": {
+    "tag": "KILN_MAIN_DRIVE_KW_461MD1_KW",
+    "uom": "",
+    "metaData": "Power consumption ot the main drive motor 461MD1 in the kiln drive system."
+  },
+  "0173": {
+    "tag": "KILN_MAIN_DRIVE_SPEED",
+    "uom": "rpm",
+    "metaData": "Rotational speed of the kiln main drive"
+  },
+  "0174": {
+    "tag": "KILN_ROLLER_BEARING_1_TEMP_1",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 1, Sensor 1"
+  },
+  "0175": {
+    "tag": "KILN_ROLLER_BEARING_1_TEMP_2",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 1, Sensor 2"
+  },
+  "0176": {
+    "tag": "KILN_ROLLER_BEARING_1_TEMP_3",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 1, Sensor 3"
+  },
+  "0177": {
+    "tag": "KILN_ROLLER_BEARING_1_TEMP_4",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 1, Sensor 4"
+  },
+  "0178": {
+    "tag": "KILN_ROLLER_BEARING_2_TEMP_5",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 2, Sensor 5"
+  },
+  "0179": {
+    "tag": "KILN_ROLLER_BEARING_2_TEMP_6",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 2, Sensor 6"
+  },
+  "0180": {
+    "tag": "KILN_ROLLER_BEARING_2_TEMP_7",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 2, Sensor 7"
+  },
+  "0181": {
+    "tag": "KILN_ROLLER_BEARING_2_TEMP_8",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 2, Sensor 8"
+  },
+  "0182": {
+    "tag": "KILN_ROLLER_BEARING_3_TEMP_9",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 3, Sensor 9"
+  },
+  "0183": {
+    "tag": "KILN_ROLLER_BEARING_3_TEMP_A",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 3, Sensor A"
+  },
+  "0184": {
+    "tag": "KILN_ROLLER_BEARING_3_TEMP_B",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 3, Sensor B"
+  },
+  "0185": {
+    "tag": "KILN_ROLLER_BEARING_3_TEMP_C",
+    "uom": "\u00b0C",
+    "metaData": "Temperature measured at Kiln roller bearing 3, Sensor C"
+  },
+  "0186": {
+    "tag": "JET_AIR_BLOWER1_CURRENT",
+    "uom": "amp",
+    "metaData": "Electrical current drawn by Jet Air Blower 1."
+  },
+  "0187": {
+    "tag": "JET_AIR_BLOWER1_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Outlet air pressure from Jet Air Blower 1."
+  },
+  "0188": {
+    "tag": "JET_AIR_BLOWER2_CURRENT",
+    "uom": "amp",
+    "metaData": "Electrical current drawn by Jet Air Blower 2."
+  },
+  "0189": {
+    "tag": "JET_AIR_BLOWER_1_SPEED",
+    "uom": "rpm",
+    "metaData": "Rotational speed of Jet Air Blower 1."
+  },
+  "0190": {
+    "tag": "JET_AIR_BLOWER_2_SPEED",
+    "uom": "rpm",
+    "metaData": "Rotational speed of Jet Air Blower 2."
+  },
+  "0191": {
+    "tag": "KILN_COAL_CONVEYING_BLOWER1_SPEED",
+    "uom": "rpm",
+    "metaData": "Speed of the Kiln coal conveying blower 1"
+  },
+  "0192": {
+    "tag": "KILN_COAL_CONVEYING_BLOWER2_SPEED",
+    "uom": "rpm",
+    "metaData": "Speed of the Kiln coal conveying blower 2"
+  },
+  "0193": {
+    "tag": "STANBY_FIRING_FEED_RATE",
+    "uom": "m3/min",
+    "metaData": "Standby burner firing feed rate to kiln system"
+  },
+  "0194": {
+    "tag": "STANDBY_COAL_CONVEYING_BLOWER1_CURRENT",
+    "uom": "amp",
+    "metaData": "Total kiln running hours accumulated for the current day."
+  },
+  "0195": {
+    "tag": "STANDBY_COAL_CONVEYING_BLOWER1_FIRIING_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Specific Heat Consumption (SHC) for the previous day"
+  },
+  "0196": {
+    "tag": "STANDBY_COAL_CONVEYING_BLOWER2_CURRENT",
+    "uom": "amp",
+    "metaData": "Specific Power Consumption (SPC) for the previous day"
+  },
+  "0197": {
+    "tag": "STANDBY_COAL_CONVEYING_BLOWER2_FIRIING_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Main burner firing feed rate to kiln"
+  },
+  "0198": {
+    "tag": "DISEL_FIRING_FLOW_RATE",
+    "uom": "m3/min",
+    "metaData": "Pulverized coal firing feed rate to kiln main burner"
+  },
+  "0199": {
+    "tag": "FUEL_FIRING_RATE_IN_KILN",
+    "uom": "m3/min",
+    "metaData": "Rate of fuel firing into the kiln main burner"
+  },
+  "0200": {
+    "tag": "KILN_FILLING",
+    "uom": "%",
+    "metaData": "Indicates the kiln filling level or percentage of material bed within the kiln shell."
+  },
+  "0201": {
+    "tag": "KILN_HOOD_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Pressure measured at kiln hood"
+  },
+  "0202": {
+    "tag": "KILN_INLET_CO",
+    "uom": "\u00b0C",
+    "metaData": "Carbon monoxide concentration at kiln inlet"
+  },
+  "0203": {
+    "tag": "KILN_INLET_O2",
+    "uom": "%",
+    "metaData": "Oxygen concentration at kiln inlet"
+  },
+  "0204": {
+    "tag": "KILN_INLET_PRESSURE",
+    "uom": "mbar",
+    "metaData": "Pressure measured at kiln inlet"
+  },
+  "0205": {
+    "tag": "KILN_INLET_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of gases measured at the kiln inlet"
+  },
+  "0206": {
+    "tag": "KILN_I_L_ANALY_CO_CONTENT",
+    "uom": "%",
+    "metaData": "Carbon monoxide (CO) concentration measured by in-line analyzer at kiln inlet"
+  },
+  "0207": {
+    "tag": "KILN_I_L_ANALY_O2_CONTENT",
+    "uom": "%",
+    "metaData": "Oxygen concentration measured by in-line analyzer at kiln inlet"
+  },
+  "0208": {
+    "tag": "CLINKER_TEMP",
+    "uom": "\u00b0C",
+    "metaData": "Temperature of the discharged clinker from the Kiln"
+  },
+  "0209": {
+    "tag": "KILN_FEED1_COUNTER_TODAY",
+    "uom": "tonn",
+    "metaData": "The total feed quantity supplied to Kiln Feed Line 1 during the current day."
+  },
+  "0210": {
+    "tag": "KILN_FEED2_COUNTER_TODAY",
+    "uom": "tonn",
+    "metaData": "The total feed quantity supplied to Kiln Feed Line 2 during the current day."
+  },
+  "0211": {
+    "tag": "KILN_FEED_PREVIOUS_DAY",
+    "uom": "Ton",
+    "metaData": "Total kiln feed quantity recorded for the previous day for line 1."
+  },
+  "0212": {
+    "tag": "KILN_FEED_TODAY",
+    "uom": "Ton",
+    "metaData": "Total kiln feed quantity supplied during the current day for line 1."
+  },
+  "0213": {
+    "tag": "KILN_FEED_STATUS",
+    "uom": "",
+    "metaData": "Current operational status of kiln feed system"
+  },
+  "0214": {
+    "tag": "SHC",
+    "uom": "kcal",
+    "metaData": "Specific heat consumption by Kiln"
+  },
+  "0215": {
+    "tag": "TOTAL_PRODUCTION_PREVIOUS_DAY",
+    "uom": "TPH",
+    "metaData": "Total clinker production recorded during the previous day from kiln operation."
+  },
+  "0216": {
+    "tag": "TOTAL_PRODUCTION_TODAY",
+    "uom": "TPH",
+    "metaData": "Total clinker production accumulated during the current day from kiln operation."
+  },
+  "0217": {
+    "tag": "TOTAL_PRODUCTION_TODAY_TRIGGER",
+    "uom": "",
+    "metaData": "Trigger or flag indicating daily clinker production totalization has been updated for the current day."
+  }
+}

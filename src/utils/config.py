@@ -10,7 +10,15 @@ class KafkaConfig:
     BOOTSTRAP_SERVERS_HOST = "localhost:29093"
     BOOTSTRAP_SERVERS_DOCKER = "kafka:9093"
 
-    INPUT_TOPIC = "synthetic-sensor-data"
+    # Original synthetic data topic
+    SYNTHETIC_INPUT_TOPIC = "synthetic-sensor-data"
+
+    # New topic for actual plant data from data_input
+    KILN_PROCESS_TOPIC = "kiln-process-data"
+
+    # Default input topic (can switch between synthetic and kiln)
+    INPUT_TOPIC = "kiln-process-data"
+
     OUTPUT_TOPIC = "fingerprint-output"
 
     GROUP_ID = "fingerprint-consumer"

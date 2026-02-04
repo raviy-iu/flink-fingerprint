@@ -1,0 +1,15 @@
+{
+  "cyclic_trend_tags": [
+    {
+      "application": "kiln",
+      "tags": [
+        "KILN_I_L_ANALY_O2_CONTENT",
+        "CALC_O_L_ANALYSER_O2_CONTENT",
+        "PH1_O_L_ANALYSER_O2_CONTENT",
+        "PH2_O_L_ANALYSER_O2_CONTENT"
+      ],
+      "window_minutes": 7,
+      "n_sigmas": 3
+    }
+  ]
+}

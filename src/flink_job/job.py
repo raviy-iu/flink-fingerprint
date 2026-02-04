@@ -67,8 +67,8 @@ def main():
             if val != "null"
         ],
         output_type=Types.TUPLE([
-            Types.INT(),
-            Types.STRING(),
+            Types.STRING(),  # equip_id is now string (machine_name like "SCL_LINE_2_KILN")
+            Types.STRING(),  # sensor_id (tag name like "KILN_TEMP")
             Types.FLOAT(),
             Types.LONG()
         ])

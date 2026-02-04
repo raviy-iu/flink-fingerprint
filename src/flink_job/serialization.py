@@ -21,7 +21,7 @@ def parse_sensor_event(raw: str) -> SensorEvent:
 
 
 def build_fingerprint_json(
-    equip_id: int,
+    equip_id: str,  # Changed from int to str to support machine_name
     start_ms: int,
     end_ms: int,
     stats: dict
